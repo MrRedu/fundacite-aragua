@@ -13,9 +13,9 @@ export const App = () => {
       <Section>
         <XTimelineEmbed userId={'143858083'} />
       </Section>
-      <Section>
+      {/* <Section>
         <GoogleMapEmbed />
-      </Section>
+      </Section> */}
       <Footer />
     </>
   )
