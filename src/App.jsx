@@ -1,23 +1,21 @@
-import { TwitterTimelineEmbed } from 'react-twitter-embed'
-import { Sector } from '@/components/atoms/ui'
+import { Section } from '@/components/atoms/ui'
 import { Accordion, Header, Footer } from '@/components/organisms/ui/'
+import { XTimelineEmbed } from '@/components/atoms/ui/embed/XTimelineEmbed'
+import { GoogleMapEmbed } from '@/components/atoms/ui/embed/GoogleMapEmbed'
 
 export const App = () => {
   return (
     <>
       <Header />
-      <Sector>
+      <Section>
         <Accordion />
-      </Sector>
-      <Sector>
-        <TwitterTimelineEmbed
-          sourceType="profile"
-          // userId={'143858083'}
-          screenName={'FundaciteAragua'}
-          options={{ width: '400px', height: '500px' }}
-          lang="es"
-        />
-      </Sector>
+      </Section>
+      <Section>
+        <XTimelineEmbed userId={'143858083'} />
+      </Section>
+      <Section>
+        <GoogleMapEmbed />
+      </Section>
       <Footer />
     </>
   )
