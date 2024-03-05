@@ -10,6 +10,14 @@
     margin: 0.75rem 0;
 }
 
+.item.is-open:first-child {
+    margin-top: 0;
+}
+
+.item.is-open:last-child {
+    margin-bottom: 0;
+}
+
 .button {
     padding: var(--padding);
 

@@ -11,7 +11,6 @@
     --f-s-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
     --f-s-xxxl: clamp(3.05rem, 3.55vw + 2.17rem, 5rem);
 
-
     /* Font-weight */
     --f-regular: 400;
     --f-bold: 700;

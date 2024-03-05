@@ -1,12 +1,14 @@
-import { Accordion } from './components/organisms/ui/accordion/Accordion'
+import { Sector } from '@/components/atoms/ui'
+import { Accordion, Header, Footer } from '@/components/organisms/ui/'
 
 export const App = () => {
   return (
     <>
-      <h1>{`</App>`}</h1>
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <Header />
+      <Sector>
         <Accordion />
-      </div>
+      </Sector>
+      <Footer />
     </>
   )
 }
