@@ -1,7 +1,7 @@
 import propTypes from 'prop-types'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
 export const XTimelineEmbed = ({
-  userId,
+  userId = '143858083',
   screenName,
   options = { width: '400px', height: '500px' },
   lang = 'es',
@@ -9,9 +9,9 @@ export const XTimelineEmbed = ({
   return (
     <TwitterTimelineEmbed
       sourceType="profile"
-      userId={userId}
-      screenName={screenName}
-      // screenName={'FundaciteAragua'}
+      // userId={userId}
+      // screenName={screenName}
+      screenName={'FundaciteAragua'}
       options={{ ...options }}
       lang={lang}
     />
