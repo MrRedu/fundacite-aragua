@@ -1,0 +1,40 @@
+.container {
+    position: relative;
+}
+
+.button {
+    width: 44px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.container:hover .button {
+    opacity: 1;
+}
+
+.button-left {
+    left: 0;
+}
+
+.button-right {
+    right: 0;
+}
+
+.slider {}
+
+.images {}
+
+.image {
+    min-width: 1280px;
+    height: calc(100vh - var(--header-height));
+    object-fit: cover;
+}
