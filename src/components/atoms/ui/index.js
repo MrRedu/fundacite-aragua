@@ -1,1 +1,1 @@
-export * from './sector/Sector'
+export * from './section/Section'

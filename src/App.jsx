@@ -1,13 +1,17 @@
-import { Sector } from '@/components/atoms/ui'
+import { Section } from '@/components/atoms/ui'
 import { Accordion, Header, Footer } from '@/components/organisms/ui/'
+import { GoogleMapEmbed } from '@/components/atoms/ui/embed/GoogleMapEmbed'
 
 export const App = () => {
   return (
     <>
       <Header />
-      <Sector>
+      <Section>
         <Accordion />
-      </Sector>
+      </Section>
+      <Section>
+        <GoogleMapEmbed />
+      </Section>
       <Footer />
     </>
   )
