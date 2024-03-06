@@ -5,7 +5,14 @@ export const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main
+        style={{
+          maxWidth: 'var(--max-width-page)',
+          margin: '0 auto',
+        }}
+      >
+        {children}
+      </main>
       <Footer />
       <ScrollToTop />
     </>
