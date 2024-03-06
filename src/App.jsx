@@ -1,6 +1,5 @@
 import { Section } from '@/components/atoms/ui'
 import { Accordion, Header, Footer } from '@/components/organisms/ui/'
-import { XTimelineEmbed } from '@/components/atoms/ui/embed/XTimelineEmbed'
 import { GoogleMapEmbed } from '@/components/atoms/ui/embed/GoogleMapEmbed'
 
 export const App = () => {
@@ -9,9 +8,6 @@ export const App = () => {
       <Header />
       <Section>
         <Accordion />
-      </Section>
-      <Section>
-        <XTimelineEmbed />
       </Section>
       <Section>
         <GoogleMapEmbed />
