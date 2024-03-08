@@ -29,12 +29,40 @@
     right: 0;
 }
 
-.slider {}
+.slider {
+    overflow: hidden;
+}
 
-.images {}
+.images {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 500ms ease-in-out;
+}
 
 .image {
     min-width: 1280px;
     height: calc(100vh - var(--header-height));
     object-fit: cover;
+}
+
+.dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 0.5rem;
+    height: 0.5rem;
+
+    background-color: #fff;
+    margin: 0 0.25rem;
+    cursor: pointer;
+
+    border: none;
+}
+
+.dot.is-active {
+    background-color: #000;
 }
