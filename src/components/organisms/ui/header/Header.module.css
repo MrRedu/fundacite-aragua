@@ -1,1 +1,21 @@
-/* .header {} */
+.header {
+    width: 100%;
+    height: var(--header-height);
+    border-bottom: 1px solid #000;
+}
+
+.container {
+    max-width: var(--max-width-page);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 1.5rem 3rem;
+    }
+}
