@@ -1,6 +1,23 @@
 .header {
     width: 100%;
-    padding: 2rem 1rem;
+    border-bottom: 1px solid #000;
+    height: 80px;
+
+    
+    display: flex;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+    background-color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width-page);
+    margin: 0 auto;
+    /* padding: 1.5rem 1rem; */
 
     display: flex;
     justify-content: space-between;

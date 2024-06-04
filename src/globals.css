@@ -22,6 +22,9 @@
     --max-width-page: 1280px;
     /* Header height */
     --header-height: 72px;
+
+    /* Colors */
+    --c-white: #feffef;
 }
 
 body {

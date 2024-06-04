@@ -1,9 +1,8 @@
 import styles from './Header.module.css'
-import { Nav } from './Nav'
 export const Header = () => {
   return (
     <header id='inicio' className={styles.header}>
-
+      <div className={styles.container}>
       <a href="#inicio" className={styles['logo-link']}>
         <img src="/fundacite-logo.jpg" alt="Fundacite Maracay Logo" className={styles.logo} />
       </a>
@@ -16,7 +15,7 @@ export const Header = () => {
         </ul>
         <a href="#postular">Postular</a>
       </nav>
-      
+      </div>
     </header>
   )
 }
