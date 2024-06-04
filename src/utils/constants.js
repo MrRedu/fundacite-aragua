@@ -1,3 +1,4 @@
+export const FIVE_SECONDS_IN_MS = 5000
 export const FAQ = [
   {
     id: '1',
@@ -46,5 +47,27 @@ export const FAQ = [
     question: '¿Cuál es la capital de Francia?',
     answer:
       'La capital de Francia es París, una ciudad icónica conocida por su rica historia, arte y cultura. París es famosa por monumentos emblemáticos como la Torre Eiffel, el Louvre y la Catedral de Notre Dame. Además de ser un importante centro cultural y turístico, París también es reconocida por su gastronomía excepcional y su elegante estilo de vida.',
+  },
+]
+export const IMAGES = [
+  {
+    id: '1',
+    src: 'https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Descripción de la imagen 1',
+  },
+  {
+    id: '2',
+    src: 'https://images.unsplash.com/photo-1530580116833-2c4c1ff83c6b?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Descripción de la imagen 2',
+  },
+  {
+    id: '3',
+    src: 'https://images.unsplash.com/photo-1533422902779-aff35862e462?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Descripción de la imagen 3',
+  },
+  {
+    id: '4',
+    src: 'https://images.unsplash.com/photo-1682685794761-c8e7b2347702?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Descripción de la imagen 4',
   },
 ]

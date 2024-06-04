@@ -17,6 +17,11 @@
 
     /* Font-family */
     --f-f-primary: "Plus Jakarta Sans", sans-serif;
+
+    /* Max-width page */
+    --max-width-page: 1280px;
+    /* Header height */
+    --header-height: 72px;
 }
 
 body {

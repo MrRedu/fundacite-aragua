@@ -1,4 +1,5 @@
 import styles from './Header.module.css'
+import { Nav } from './Nav'
 export const Header = () => {
   return (
     <header id='inicio' className={styles.header}>
