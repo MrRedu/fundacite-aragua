@@ -1,50 +1,44 @@
 // https://resend.com/docs/send-with-nextjs
 import propTypes from 'prop-types'
-export const EmailTemplate = ({
-  name,
-  email,
-  //   companyName,
-  //   services,
-  //   message,
-}) => (
+export const EmailTemplate = ({ names, lastnames, email, phone, message }) => (
   <div>
     <h1>Postulación para Fundacite</h1>
     <p>
-      Name:{' '}
+      Nombres:{' '}
       <span style={{ fontWeight: 'bold', color: 'red', lineHeight: '1' }}>
-        {name}
+        {names}
       </span>
     </p>
     <p>
-      E-mail:{' '}
+      Apellidos:{' '}
+      <span style={{ fontWeight: 'bold', color: 'red', lineHeight: '1' }}>
+        {lastnames}
+      </span>
+    </p>
+    <p>
+      Correo electrónico:{' '}
       <span style={{ fontWeight: 'bold', color: 'red', lineHeight: '1' }}>
         {email}
       </span>
     </p>
-    {/* <p>
-      Company name:{' '}
+    <p>
+      Número de teléfono:{' '}
       <span style={{ fontWeight: 'bold', color: 'red', lineHeight: '1' }}>
-        {companyName}
+        {phone}
       </span>
     </p>
     <p>
-      Services requested:{' '}
-      <span style={{ fontWeight: 'bold', color: 'red', lineHeight: '1' }}>
-        {services}
-      </span>
-    </p>
-    <p>
-      Project details:{' '}
+      Mensaje:{' '}
       <span style={{ fontWeight: 'bold', color: 'red', lineHeight: '1' }}>
         {message}
       </span>
-    </p> */}
+    </p>
   </div>
 )
 EmailTemplate.propTypes = {
-  name: propTypes.string,
+  names: propTypes.string,
+  lastnames: propTypes.string,
   email: propTypes.string,
-  //   companyName: propTypes.string,
-  //   services: propTypes.array,
-  //   message: propTypes.string,
+  phone: propTypes.string,
+  message: propTypes.string,
 }

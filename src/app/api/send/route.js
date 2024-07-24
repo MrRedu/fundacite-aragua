@@ -7,22 +7,22 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export async function POST(req, res) {
   try {
     const formData = await req.formData()
-    const name = formData.get('name')
+    const names = formData.get('names')
+    const lastnames = formData.get('lastnames')
     const email = formData.get('email')
-    // const companyName = formData.get('companyName')
-    // const services = formData.getAll('services')
-    // const message = formData.get('message')
+    const phone = formData.get('phone')
+    const message = formData.get('message')
 
     await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
       to: [process.env.PERSONAL_EMAIL],
       subject: 'Postulación',
       react: EmailTemplate({
-        name,
+        names,
+        lastnames,
         email,
-        // companyName,
-        // services,
-        // message,
+        phone,
+        message,
       }),
     })
 

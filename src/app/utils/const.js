@@ -9,3 +9,11 @@ export const initialValueFormRegister = {
   email: '',
   password: '',
 }
+
+export const initialValueFormPostulation = {
+  names: '',
+  lastnames: '',
+  email: '',
+  phone: '',
+  message: '',
+}
