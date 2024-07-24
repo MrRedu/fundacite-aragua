@@ -1,1 +1,26 @@
-/* :root {} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* UI */
+    --max-width-display: 1378px;
+
+    /* Font family */
+    --f-f-roboto: 'Roboto', sans-serif;
+}
+
+/* * { } */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--f-f-roboto);
+    max-width: var(--max-width-display);
+    width: 100%;
+    margin: 0 auto;
+}

@@ -1,12 +1,12 @@
 import propTypes from 'prop-types'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 
 import '#/node_modules/minireset.css/minireset.min.css'
 import './globals.css'
 
 import { Header, Footer } from './components/organisms/ui/'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Fundacite Aragua',
@@ -16,7 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body
+      // className={inter.className}
+      >
         <Header />
         <main>{children}</main>
         <Footer />
