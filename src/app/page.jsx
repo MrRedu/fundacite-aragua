@@ -3,5 +3,5 @@ export default function HomePage() {
     <>
       <h2>LandingPage</h2>
     </>
-  );
+  )
 }

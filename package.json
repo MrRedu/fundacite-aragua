@@ -6,11 +6,27 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.5"
+    "minireset.css": "0.0.7",
+    "next": "14.2.5",
+    "react": "18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.12",
+    "@types/react": "18.3.3",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-n": "16.6.2",
+    "eslint-plugin-promise": "6.6.0",
+    "eslint-plugin-react": "7.35.0",
+    "prettier": "3.3.3",
+    "prop-types": "15.8.1",
+    "typescript": "5.5.4"
   }
 }
