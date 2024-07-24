@@ -13,11 +13,13 @@
     "minireset.css": "0.0.7",
     "next": "14.2.5",
     "react": "18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "resend": "3.5.0"
   },
   "devDependencies": {
     "@types/node": "20.14.12",
     "@types/react": "18.3.3",
+    "autoprefixer": "10.4.19",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-standard": "17.1.0",
@@ -25,8 +27,10 @@
     "eslint-plugin-n": "16.6.2",
     "eslint-plugin-promise": "6.6.0",
     "eslint-plugin-react": "7.35.0",
+    "postcss": "8.4.40",
     "prettier": "3.3.3",
     "prop-types": "15.8.1",
+    "tailwindcss": "3.4.6",
     "typescript": "5.5.4"
   }
 }
