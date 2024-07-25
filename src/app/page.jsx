@@ -1,10 +1,36 @@
 import { Section } from '@/components/atoms/ui/Section'
 
-export default function HomePage() {
+const loadUsers = async () => {
+  try {
+    const response = await fetch('http://localhost:3000/api/users')
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export default async function HomePage() {
+  const { data } = await loadUsers()
   return (
     <>
       <Section>
         <p>BANNER</p>
+        <ul>
+          {data.map(user => (
+            <li key={user.id_user}>
+              <ul>
+                <li>{user.id_user}</li>
+                <li>{user.email_user}</li>
+                <li>{user.password_user}</li>
+                <li>{user.names_user}</li>
+                <li>{user.id_rol}</li>
+                <li>{`${new Date(user.created_at)}`}</li>
+                <li>{`${new Date(user.updated_at)}`}</li>
+              </ul>
+            </li>
+          ))}
+        </ul>
       </Section>
       <Section id={'about'}>
         <p>¿Quiénes somos?</p>
