@@ -24,7 +24,7 @@ export const Tabs = () => {
           {TABS_ABOUT.map(({ id, name }) => (
             <li key={id} className="me-2" role="presentation">
               <button
-                className="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                className={`inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 ${activeTab === id ? 'border-blue-600 text-blue-600 dark:border-blue-500 dark:text-blue-500' : 'border-transparent text-gray-500 dark:text-gray-400'}`}
                 id={id}
                 data-tabs-target={`#${id}`}
                 type="button"
@@ -43,14 +43,20 @@ export const Tabs = () => {
         {TABS_ABOUT.map(({ id, name, content }) => (
           <div
             key={id}
-            className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${activeTab === id ? 'block' : 'hidden'}`}
+            className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 flex flex-col gap-2 ${activeTab === id ? 'block' : 'hidden'}`}
             id={id}
             role="tabpanel"
             aria-labelledby={id}
           >
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              {content}
-            </p>
+            {typeof content === 'string' ? (
+              <p>{content}</p>
+            ) : (
+              content.map((paragraph, index) => (
+                <p key={index} className="text-pretty">
+                  {paragraph}
+                </p>
+              ))
+            )}
           </div>
         ))}
       </div>

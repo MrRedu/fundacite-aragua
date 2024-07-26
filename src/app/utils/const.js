@@ -138,26 +138,35 @@ export const TABS_ABOUT = [
   {
     id: 'mision',
     name: 'Misión',
-    content: 'lorem ipsum Misión',
+    content:
+      'Contribuir al desarrollo de la ciencia, la tecnología y la innovación en el estado Aragua, mediante el apoyo a instituciones e individualidades, tanto estadales como nacionales, propiciando y facilitando el trabajo articulado en procura de una sociedad regida por criterios de equidad, solidaridad y productividad.',
   },
   {
     id: 'vision',
     name: 'Visión',
-    content: 'lorem ipsum Visión',
+    content:
+      'Convertirnos en la institución natural de articulación entre los integrantes del sistema nacional de ciencia, tecnología e innovación, gestionada con criterios de vanguardia, personal calificado y procedimientos apropiados que garanticen la excelencia en el cumplimiento de la misión institucional.',
   },
   {
-    id: 'valores',
-    name: 'Valores',
-    content: 'lorem ipsum Valores',
-  },
-  {
-    id: 'competencias',
-    name: 'Competencias',
-    content: 'lorem ipsum Competencias',
+    id: 'objetivos',
+    name: 'Objetivos',
+    content: [
+      'Los lineamientos generales de FUNDACITE CENTRO OCCIDENTE se orientan a crear y fortalecer un sistema de Desarrollo Científico y Tecnológico Regional, integrado por el Estado, el Sector Productivo y los organismos de Ciencia y Tecnología, que desarrolle y vincule eficientemente los procesos de creación, difusión y aplicación de los conocimientos científicos y tecnológicos en función de las necesidades prioritarias de la Región.',
+      'En este sentido sus objetivos son:',
+      '· Participar en la coordinación y armonización de las actividades realizadas por las instituciones ubicadas en la Región, dedicadas a la investigación científica y tecnológica, dentro de las prioridades establecidas en los planes regionales y nacionales.',
+      '· Participar en el fortalecimiento de la investigación científica y tecnológica en la región y, en general, estimular el interés por la ciencia y la tecnología.',
+      '· Propiciar el establecimiento de vínculos entre las instituciones de investigación de la región, de ellas entre si y con lo organismos públicos y privados, tanto nacionales como regionales o estadales que tengan atribuidas responsabilidades en el desarrollo general del país, y en especial, de la ciencia y la tecnología.',
+      '· Colaborar con las instituciones de la región, así como con los organismos regionales de desarrollo, cuando así lo soliciten para el mejor cumplimiento de sus respectivas labores.',
+    ],
   },
   {
     id: 'historia',
     name: 'Historia',
-    content: 'lorem ipsum Historia',
+    content: [
+      'La existencia de FUNDACITE CENTRO OCCIDENTE responde a una necesidad y esfuerzo Regional. En la XXIX Reunión de AsoVAC realizada en Barquisimeto en el año 1979 se solicitó al Ministro de Ciencia y Tecnología la creación de un organismo regional encargado de promover el Desarrollo Científico y Tecnológico.',
+      'Como producto de esta inquietud, se constituye el Consejo Científico-Tecnológico de la Región Centro Occidental, integrado por diferentes instituciones el cual tenía como una de sus funciones fundamentales el diseñar las orientaciones del sector Ciencia y Tecnología para el VI Plan de la Nación, dentro del cual se contempló como estrategia la creación de FUNDACITE CENTRO OCCIDENTE.',
+      'Finalmente, creada mediante Decreto Presidencial Nº 375, de fecha 27 de julio de 1989, publicado en la Gaceta  Oficial  de  la  República  de  Venezuela  Nº  34.292,  de  fecha  28  de  agosto  de  1989. Según el Acta Constitutiva es una fundación con personalidad jurídica, descentralizada sin fines  de  lucro.',
+      'Actualmente  se  encuentra  adscrito  al  Ministerio  del  Poder  Popular  para  la Educación  Universitaria,  Ciencia  y  Tecnología  mediante  Decreto  N°  1.226,  publicado  en  la Gaceta  Oficial  de  la  República  Bolivariana  de  Venezuela  N°  40.489,  de  fecha  03  de septiembre de 2014.',
+    ],
   },
 ]
