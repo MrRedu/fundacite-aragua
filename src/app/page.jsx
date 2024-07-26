@@ -1,22 +1,25 @@
-import { Section } from '@/components/atoms/ui/Section'
+import { Section, Title } from '@/components/atoms/ui/'
+import { InfiniteScrollHorizontal } from '@/components/organisms/ui/'
+import { ENTES_ADSCRITOS } from '@/utils/const'
 
 export default async function HomePage() {
   return (
     <>
       <Section>
-        <p>BANNER</p>
+        <Title>{`HeroSection`}</Title>
       </Section>
       <Section id={'about'}>
-        <p>¿Quiénes somos?</p>
+        <Title>{`¿Quiénes somos?`}</Title>
       </Section>
       <Section id={'programs'}>
-        <p>Programas</p>
+        <Title>{`Programas`}</Title>
       </Section>
       <Section>
-        <p>Entes adscritas</p>
+        <Title>{`Entes adscritas`}</Title>
+        <InfiniteScrollHorizontal items={ENTES_ADSCRITOS} />
       </Section>
       <Section id={'postulations'}>
-        <p>Postulaciones</p>
+        <Title>{`Postulaciones`}</Title>
       </Section>
       <Section notPadding id={'contact'}>
         <Section isDiv>

@@ -102,3 +102,34 @@ export const SOCIAL_MEDIA_LINKS = [
     ),
   },
 ]
+
+export const ENTES_ADSCRITOS = [
+  {
+    nombre: 'Fundacite Aragua',
+    logo: '/fundacite-logo.webp',
+  },
+  {
+    nombre: 'Fundacite Aragua',
+    logo: '/fundacite-logo.webp',
+  },
+  {
+    nombre: 'Fundacite Aragua',
+    logo: '/fundacite-logo.webp',
+  },
+  {
+    nombre: 'Fundacite Aragua',
+    logo: '/fundacite-logo.webp',
+  },
+  {
+    nombre: 'Fundacite Aragua',
+    logo: '/fundacite-logo.webp',
+  },
+  {
+    nombre: 'Fundacite Aragua',
+    logo: '/fundacite-logo.webp',
+  },
+  {
+    nombre: 'Fundacite Aragua',
+    logo: '/fundacite-logo.webp',
+  },
+]
