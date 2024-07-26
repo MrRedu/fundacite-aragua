@@ -1,10 +1,9 @@
 'use client'
-
+import propTypes from 'prop-types'
 import { useState } from 'react'
-import { TABS_ABOUT } from '@/utils/const'
 
-export const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('mision')
+export const Tabs = ({ items }) => {
+  const [activeTab, setActiveTab] = useState(items[0].id)
 
   const toggleTab = tab => {
     if (activeTab !== tab) {
@@ -21,7 +20,7 @@ export const Tabs = () => {
           data-tabs-toggle="#default-tab-content"
           role="tablist"
         >
-          {TABS_ABOUT.map(({ id, name }) => (
+          {items.map(({ id, name }) => (
             <li key={id} className="me-2" role="presentation">
               <button
                 className={`inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 ${activeTab === id ? 'border-blue-600 text-blue-600 dark:border-blue-500 dark:text-blue-500' : 'border-transparent text-gray-500 dark:text-gray-400'}`}
@@ -40,7 +39,7 @@ export const Tabs = () => {
         </ul>
       </div>
       <div id="default-tab-content">
-        {TABS_ABOUT.map(({ id, name, content }) => (
+        {items.map(({ id, name, content }) => (
           <div
             key={id}
             className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 flex flex-col gap-2 ${activeTab === id ? 'block' : 'hidden'}`}
@@ -62,4 +61,8 @@ export const Tabs = () => {
       </div>
     </>
   )
+}
+
+Tabs.propTypes = {
+  items: propTypes.arrayOf(propTypes.object),
 }

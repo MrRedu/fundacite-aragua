@@ -1,4 +1,4 @@
-import { ENTES_ADSCRITOS } from '@/utils/const'
+import { ENTES_ADSCRITOS, TABS_ABOUT } from '@/utils/const'
 import { Section, Title, GoogleMapEmbed } from '@/components/atoms/ui/'
 import { InfiniteScrollHorizontal, Tabs } from '@/components/organisms/ui/'
 
@@ -10,7 +10,7 @@ export default async function HomePage() {
       </Section>
       <Section id={'about'}>
         <Title>{`¿Quiénes somos?`}</Title>
-        <Tabs />
+        <Tabs items={TABS_ABOUT} />
       </Section>
       <Section id={'programs'}>
         <Title>{`Ejes de gestión`}</Title>
