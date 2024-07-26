@@ -1,3 +1,5 @@
 export * from './form/InputGroup'
 export * from './form/Input'
 export * from './form/Label'
+export * from './Section'
+export * from './Title'
