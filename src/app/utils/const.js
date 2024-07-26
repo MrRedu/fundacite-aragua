@@ -105,31 +105,59 @@ export const SOCIAL_MEDIA_LINKS = [
 
 export const ENTES_ADSCRITOS = [
   {
-    nombre: 'Fundacite Aragua',
+    name: 'Fundacite Aragua',
     logo: '/fundacite-logo.webp',
   },
   {
-    nombre: 'Fundacite Aragua',
+    name: 'Fundacite Aragua',
     logo: '/fundacite-logo.webp',
   },
   {
-    nombre: 'Fundacite Aragua',
+    name: 'Fundacite Aragua',
     logo: '/fundacite-logo.webp',
   },
   {
-    nombre: 'Fundacite Aragua',
+    name: 'Fundacite Aragua',
     logo: '/fundacite-logo.webp',
   },
   {
-    nombre: 'Fundacite Aragua',
+    name: 'Fundacite Aragua',
     logo: '/fundacite-logo.webp',
   },
   {
-    nombre: 'Fundacite Aragua',
+    name: 'Fundacite Aragua',
     logo: '/fundacite-logo.webp',
   },
   {
-    nombre: 'Fundacite Aragua',
+    name: 'Fundacite Aragua',
     logo: '/fundacite-logo.webp',
+  },
+]
+
+export const TABS_ABOUT = [
+  {
+    id: 'mision',
+    name: 'Misión',
+    content: 'lorem ipsum Misión',
+  },
+  {
+    id: 'vision',
+    name: 'Visión',
+    content: 'lorem ipsum Visión',
+  },
+  {
+    id: 'valores',
+    name: 'Valores',
+    content: 'lorem ipsum Valores',
+  },
+  {
+    id: 'competencias',
+    name: 'Competencias',
+    content: 'lorem ipsum Competencias',
+  },
+  {
+    id: 'historia',
+    name: 'Historia',
+    content: 'lorem ipsum Historia',
   },
 ]
