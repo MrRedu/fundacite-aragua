@@ -1,26 +1,21 @@
-import { ENTES_ADSCRITOS, TABS_ABOUT } from '@/utils/const'
-import { Section, Title, GoogleMapEmbed } from '@/components/atoms/ui/'
+import { ENTES_ADSCRITOS, IMAGES_TO_CAROUSEL, TABS_ABOUT } from '@/utils/const'
+import {
+  Section,
+  Title,
+  GoogleMapEmbed,
+  BackToTopButton,
+} from '@/components/atoms/ui/'
 import {
   InfiniteScrollHorizontal,
   Tabs,
   Carousel,
 } from '@/components/organisms/ui/'
 
-const images = [
-  '/fundacite-logotipo.webp',
-  '/fundacite-logotipo.webp',
-  '/fundacite-logotipo.webp',
-  '/fundacite-logotipo.webp',
-]
-
 export default async function HomePage() {
   return (
     <>
       <Section notPadding>
-        {/* <Section isDiv>
-          <Title>{`HeroSection`}</Title>
-        </Section> */}
-        <Carousel images={images} />
+        <Carousel images={IMAGES_TO_CAROUSEL} />
       </Section>
 
       <Section id={'about'}>
@@ -43,6 +38,7 @@ export default async function HomePage() {
         </Section>
         <GoogleMapEmbed />
       </Section>
+      <BackToTopButton />
     </>
   )
 }

@@ -172,3 +172,10 @@ export const TABS_ABOUT = [
 ]
 
 export const ONE_SECOND_IN_MILLISECONDS = 1000
+
+export const IMAGES_TO_CAROUSEL = [
+  '/fundacite-logotipo.webp',
+  '/fundacite-logotipo.webp',
+  '/fundacite-logotipo.webp',
+  '/fundacite-logotipo.webp',
+]
