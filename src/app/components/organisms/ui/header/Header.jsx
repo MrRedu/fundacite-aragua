@@ -3,9 +3,15 @@ import { NAV_ITEMS } from '@/utils/const'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 export const Header = () => {
   const currentPathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState()
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   return (
     <header>
@@ -39,8 +45,9 @@ export const Header = () => {
               className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="mobile-menu-2"
               aria-expanded="false"
+              onClick={toggleMenu}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{`Abrir menú principal`}</span>
               <svg
                 className="w-6 h-6"
                 fill="currentColor"
@@ -68,10 +75,10 @@ export const Header = () => {
             </button>
           </div>
           <div
-            className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+            className={`justify-between items-center w-full lg:flex lg:w-auto lg:order-1 ${isMenuOpen ? 'block' : 'hidden'}`}
             id="mobile-menu-2"
           >
-            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 gap-1">
               {NAV_ITEMS.map(item => (
                 <li key={item.name}>
                   <Link

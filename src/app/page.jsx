@@ -1,38 +1,44 @@
-import { Section } from '@/components/atoms/ui/Section'
+import { ENTES_ADSCRITOS, IMAGES_TO_CAROUSEL, TABS_ABOUT } from '@/utils/const'
+import {
+  Section,
+  Title,
+  GoogleMapEmbed,
+  BackToTopButton,
+} from '@/components/atoms/ui/'
+import {
+  InfiniteScrollHorizontal,
+  Tabs,
+  Carousel,
+} from '@/components/organisms/ui/'
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <>
-      <Section>
-        <p>BANNER</p>
+      <Section notPadding>
+        <Carousel images={IMAGES_TO_CAROUSEL} />
       </Section>
+
       <Section id={'about'}>
-        <p>¿Quiénes somos?</p>
+        <Title>{`¿Quiénes somos?`}</Title>
+        <Tabs items={TABS_ABOUT} />
       </Section>
       <Section id={'programs'}>
-        <p>Programas</p>
+        <Title>{`Ejes de gestión`}</Title>
       </Section>
       <Section>
-        <p>Entes adscritas</p>
+        <Title>{`Entes adscritas`}</Title>
+        <InfiniteScrollHorizontal items={ENTES_ADSCRITOS} />
       </Section>
       <Section id={'postulations'}>
-        <p>Postulaciones</p>
+        <Title>{`Postulaciones`}</Title>
       </Section>
       <Section notPadding id={'contact'}>
         <Section isDiv>
-          <p>Contactos</p>
+          <Title>{`Contactos`}</Title>
         </Section>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.097771814699!2d-67.59807548993697!3d10.253698068576766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e803c9fe37f2a07%3A0x9f48fe709c9ff836!2sFundacite%20Aragua!5e0!3m2!1ses!2sve!4v1721854489811!5m2!1ses!2sve"
-          width="800"
-          height="600"
-          // style="border:0;"
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="w-full h-96"
-        ></iframe>
+        <GoogleMapEmbed />
       </Section>
+      <BackToTopButton />
     </>
   )
 }
