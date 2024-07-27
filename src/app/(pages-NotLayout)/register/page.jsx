@@ -7,7 +7,7 @@ export default function RegisterPage() {
       <div className="flex flex-col items-center justify-center mx-auto h-screen lg:py-0">
         <Link
           href="/"
-          class="font-medium text-blue-600 dark:text-blue-500 hover:underline flex items-center mb-6"
+          className="font-medium text-blue-600 dark:text-blue-500 hover:underline flex items-center mb-6"
         >
           <svg
             className="w-3.5 h-3.5 me-2 rotate-180"

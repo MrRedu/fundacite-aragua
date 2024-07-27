@@ -7,6 +7,7 @@ import {
   PhoneInput,
   Textarea,
   EmailInput,
+  Button,
 } from '@/components/atoms/ui'
 
 export const FormPostulation = () => {
@@ -74,14 +75,14 @@ export const FormPostulation = () => {
           onChange={handleChange}
         />
       </InputGroup>
-      <button
+      <Button
         type="submit"
         onClick={handleSubmit}
         disabled={isLoading}
         className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-blue-300"
       >
         {`Enviar`}
-      </button>
+      </Button>
     </form>
   )
 }

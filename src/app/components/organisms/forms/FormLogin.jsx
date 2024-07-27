@@ -1,7 +1,13 @@
 'use client'
 import useFormLogin from '@/hooks/useFormLogin'
 import Link from 'next/link'
-import { EmailInput, Input, InputGroup, Label } from '@/components/atoms/ui'
+import {
+  Button,
+  EmailInput,
+  Input,
+  InputGroup,
+  Label,
+} from '@/components/atoms/ui'
 
 export const FormLogin = () => {
   const {
@@ -67,13 +73,9 @@ export const FormLogin = () => {
           {`¿Olvidaste tu contraseña?`}
         </Link>
       </div>
-      <button
-        type="submit"
-        className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-        disabled={isLoading}
-      >
-        {`Iniciar sesión`}
-      </button>
+      <Button type="submit" isDisabled={isLoading} className="w-full">
+        {isLoading ? 'Cargando...' : 'Iniciar sesión'}
+      </Button>
       <p className="text-sm font-light text-gray-500 dark:text-gray-400">
         {`¿Aún no tienes cuenta?`}
         {` `}
