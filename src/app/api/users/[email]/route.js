@@ -1,6 +1,7 @@
 import { connection } from '@/app/libs/mysql'
 import { NextResponse } from 'next/server'
 
+// Obtener un usuario por email
 export async function GET(req, { params }) {
   try {
     const [result] = await connection.query(
