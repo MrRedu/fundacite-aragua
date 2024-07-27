@@ -23,6 +23,7 @@ CREATE TABLE `tbl_users` (
   `password_user` varchar(255) NOT NULL,
   `names_user` varchar(32) NOT NULL,
   `lastanmes_user` varchar(32),
+  `cedula_user` int(12) NOT NULL,
   `address_user` varchar(255),
   `university_user` varchar(255),
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),

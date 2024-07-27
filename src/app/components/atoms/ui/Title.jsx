@@ -18,7 +18,7 @@ export const Title = ({ isH2, isH4, children }) => {
 
   return (
     <>
-      <h3 className="text-3xl font-bold text-[#A5A8AA]">{children}</h3>
+      <h3 className="text-3xl font-bold text-gray-500">{children}</h3>
     </>
   )
 }
