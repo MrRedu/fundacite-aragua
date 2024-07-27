@@ -40,7 +40,7 @@ export const Carousel = ({ images }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className={`flex transition ease-out duration-700 w-full md:h-[635px]`}
+        className={`flex transition ease-out duration-700 w-full`}
         style={{
           transform: `translateX(-${current * 100}%)`,
         }}
