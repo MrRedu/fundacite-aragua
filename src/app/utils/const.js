@@ -105,32 +105,44 @@ export const SOCIAL_MEDIA_LINKS = [
 
 export const ENTES_ADSCRITOS = [
   {
-    name: 'Fundacite Aragua',
-    logo: '/fundacite-logo.webp',
+    name: 'Ipostel - Correos Venezuela',
+    logo: '/ente-01.webp',
   },
   {
-    name: 'Fundacite Aragua',
-    logo: '/fundacite-logo.webp',
+    name: 'CIDA',
+    logo: '/ente-02.webp',
   },
   {
-    name: 'Fundacite Aragua',
-    logo: '/fundacite-logo.webp',
+    name: 'Info centro',
+    logo: '/ente-03.webp',
   },
   {
-    name: 'Fundacite Aragua',
-    logo: '/fundacite-logo.webp',
+    name: 'Movilnet',
+    logo: '/ente-04.webp',
   },
   {
-    name: 'Fundacite Aragua',
-    logo: '/fundacite-logo.webp',
+    name: 'Cantv',
+    logo: '/ente-05.webp',
   },
   {
-    name: 'Fundacite Aragua',
-    logo: '/fundacite-logo.webp',
+    name: 'Ipostel - Correos Venezuela',
+    logo: '/ente-01.webp',
   },
   {
-    name: 'Fundacite Aragua',
-    logo: '/fundacite-logo.webp',
+    name: 'CIDA',
+    logo: '/ente-02.webp',
+  },
+  {
+    name: 'Info centro',
+    logo: '/ente-03.webp',
+  },
+  {
+    name: 'Movilnet',
+    logo: '/ente-04.webp',
+  },
+  {
+    name: 'Cantv',
+    logo: '/ente-05.webp',
   },
 ]
 
@@ -174,8 +186,7 @@ export const TABS_ABOUT = [
 export const ONE_SECOND_IN_MILLISECONDS = 1000
 
 export const IMAGES_TO_CAROUSEL = [
-  '/fundacite-logotipo.webp',
-  '/fundacite-logotipo.webp',
-  '/fundacite-logotipo.webp',
-  '/fundacite-logotipo.webp',
+  '/carousel-01.webp',
+  '/carousel-02.webp',
+  '/carousel-03.webp',
 ]

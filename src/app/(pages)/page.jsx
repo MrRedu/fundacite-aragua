@@ -17,7 +17,6 @@ export default async function HomePage() {
       <Section notPadding>
         <Carousel images={IMAGES_TO_CAROUSEL} />
       </Section>
-
       <Section id={'about'}>
         <Title>{`¿Quiénes somos?`}</Title>
         <Tabs items={TABS_ABOUT} />
