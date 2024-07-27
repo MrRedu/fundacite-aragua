@@ -1,5 +1,13 @@
 import propTypes from 'prop-types'
-export const Input = ({ type, id, name, value, placeholder, onChange }) => {
+export const Input = ({
+  type,
+  id,
+  name,
+  value,
+  placeholder,
+  onChange,
+  isRequired = false,
+}) => {
   return (
     <input
       type={type}
@@ -8,6 +16,8 @@ export const Input = ({ type, id, name, value, placeholder, onChange }) => {
       value={value}
       placeholder={placeholder}
       onChange={onChange}
+      required={isRequired}
+      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
     />
   )
 }
@@ -18,4 +28,5 @@ Input.propTypes = {
   value: propTypes.string,
   placeholder: propTypes.string,
   onChange: propTypes.func,
+  isRequired: propTypes.bool,
 }

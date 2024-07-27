@@ -17,7 +17,6 @@ export default async function HomePage() {
       <Section notPadding>
         <Carousel images={IMAGES_TO_CAROUSEL} />
       </Section>
-
       <Section id={'about'}>
         <Title>{`¿Quiénes somos?`}</Title>
         <Tabs items={TABS_ABOUT} />
@@ -25,8 +24,10 @@ export default async function HomePage() {
       <Section id={'programs'}>
         <Title>{`Ejes de gestión`}</Title>
       </Section>
-      <Section>
-        <Title>{`Entes adscritas`}</Title>
+      <Section notPadding>
+        <Section isDiv>
+          <Title>{`Entes adscritas`}</Title>
+        </Section>
         <InfiniteScrollHorizontal items={ENTES_ADSCRITOS} />
       </Section>
       <Section id={'postulations'}>

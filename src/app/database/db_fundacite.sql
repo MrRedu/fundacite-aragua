@@ -6,7 +6,7 @@ CREATE DATABASE db_fundacite;
 USE db_fundacite;
 
 CREATE TABLE `tbl_roles` (
-  `id_rol` int(11) NOT NULL,
+  `id_rol` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name_rol` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de roles.';
 
@@ -15,35 +15,21 @@ INSERT INTO `tbl_roles` (id_rol, name_rol) VALUES
 (2, 'Desarrollador'),
 (3, 'General');
 
-
 CREATE TABLE `tbl_users` (
-  `id_user` int(11) NOT NULL,
-  `id_rol` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id_rol` int(11) NOT NULL DEFAULT 3,
   `email_user` varchar(48) NOT NULL,
   `password_user` varchar(255) NOT NULL,
   `names_user` varchar(32) NOT NULL,
-  `lastanmes_user` varchar(32),
+  `lastnames_user` varchar(32) NOT NULL,
+  `cedula_user` int(12),
   `address_user` varchar(255),
   `university_user` varchar(255),
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de usuarios.';
 
-
-INSERT INTO `tbl_users` (id_user, email_user, password_user, names_user, id_rol) VALUES
-(1, 'usuario1@example.com', 'usuario1', 'Eduardo', 1),
-(2, 'usuario2@example.com', 'usuario2', 'Ana', 2),
-(3, 'usuario3@example.com', 'usuario3', 'Luis', 3);
-
-ALTER TABLE `tbl_users`
-  ADD PRIMARY KEY (`id_user`);
-
-ALTER TABLE `tbl_roles`
-  ADD PRIMARY KEY (`id_rol`);
-
 ALTER TABLE `tbl_users`
   ADD CONSTRAINT `tbl_users_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `tbl_roles` (`id_rol`);
-
-
 
 COMMIT;
