@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { initialValueFormLogin } from '@/utils/const'
 import { validateEmail } from '@/utils/utils'
+import { signIn } from 'next-auth/react'
 
 export default function useFormLogin() {
   const [formData, setFormData] = useState(initialValueFormLogin)
   const [isLoading, setIsLoading] = useState(false)
-  // const [errors, setErrors] = useState()
+  const [error, setError] = useState(null)
 
   const handleChange = e => {
     setFormData(prev => ({
@@ -14,7 +15,7 @@ export default function useFormLogin() {
     }))
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
 
     const isValidEmail = validateEmail(formData.email)
@@ -26,8 +27,18 @@ export default function useFormLogin() {
 
     try {
       setIsLoading(true)
-      console.log(formData)
+
+      const response = await signIn('credentials', {
+        redirect: false,
+        email: formData.email,
+        password: formData.password,
+      })
+
+      if (response.error) {
+        return setError(response.error)
+      }
     } catch (error) {
+      setError(error)
       console.error(error)
     } finally {
       setIsLoading(false)
