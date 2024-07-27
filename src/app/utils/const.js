@@ -5,9 +5,11 @@ export const initialValueFormLogin = {
 }
 
 export const initialValueFormRegister = {
-  name: '',
+  names: '',
+  lastnames: '',
   email: '',
   password: '',
+  password_confirmation: '',
 }
 
 export const initialValueFormPostulation = {
