@@ -2,14 +2,22 @@ import propTypes from 'prop-types'
 export const Section = ({ children, notPadding, isDiv, id, ...props }) => {
   if (isDiv) {
     return (
-      <div id={id} className={`w-full ${notPadding ? '' : 'p-8'}`} {...props}>
+      <div
+        id={id}
+        className={`w-full ${notPadding ? '' : 'py-12 px-8 md:px-16'}`}
+        {...props}
+      >
         {children}
       </div>
     )
   }
 
   return (
-    <section id={id} className={`w-full ${notPadding ? '' : 'p-8'}`} {...props}>
+    <section
+      id={id}
+      className={`w-full ${notPadding ? '' : 'py-12 px-8 md:px-16'}`}
+      {...props}
+    >
       {children}
     </section>
   )
