@@ -3,7 +3,7 @@
 import { useSession, signOut } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import { Section } from '@/components/atoms/ui'
-import { Card } from '@/components/molecules/ui/Card'
+import { Card } from '@/components/molecules/ui/'
 import { FormPostulation } from '@/components/organisms/forms/FormPostulation'
 import Image from 'next/image'
 
@@ -21,7 +21,7 @@ const BENEFITS_LIST_SERVICIO = [
   'Red de Contactos: Participar en estas actividades permite a los estudiantes establecer conexiones con profesionales del sector, lo que puede ser valioso para futuras oportunidades laborales.',
 ]
 
-export default function ProfilePage() {
+export default function PostulationPage() {
   const { data: session } = useSession()
 
   if (!session) {
@@ -46,7 +46,12 @@ export default function ProfilePage() {
         <p>{`Esta oportunidad es ideal para aquellos interesados en adquirir experiencia en el campo tecnológico y en participar activamente en proyectos que benefician a la comunidad.`}</p>
       </div>
       <div className="flex flex-col lg:flex-row gap-8">
-        <Card title="Pasantías" buttonText="¡Postularme!">
+        <Card
+          title="Pasantías"
+          buttonText="¡Postularme!"
+          isLink
+          href="/postulation/internship"
+        >
           <div className="mb-6">
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
               {`Las pasantías están diseñadas para proporcionar a los estudiantes experiencia práctica en su campo de estudio, permitiéndoles aplicar los conocimientos adquiridos en un entorno profesional real.`}
@@ -66,7 +71,12 @@ export default function ProfilePage() {
             </ul>
           </div>
         </Card>
-        <Card title="Servicio comunitario" buttonText="¡Postularme!">
+        <Card
+          title="Servicio comunitario"
+          buttonText="¡Postularme!"
+          isLink
+          href="/postulation/community-service"
+        >
           <div className="mb-6">
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
               {`El servicio comunitario está orientado a contribuir al bienestar de la comunidad. Los estudiantes aplican sus conocimientos en proyectos que benefician a grupos o comunidades vulnerables.`}

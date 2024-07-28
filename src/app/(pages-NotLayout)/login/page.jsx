@@ -9,7 +9,7 @@ export default function LoginPage() {
   const { data: session } = useSession()
 
   if (session) {
-    redirect('/profile')
+    redirect('/postulation')
   }
 
   return (
