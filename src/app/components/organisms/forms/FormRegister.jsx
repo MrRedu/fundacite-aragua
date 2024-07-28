@@ -4,10 +4,10 @@ import {
   InputGroup,
   Label,
   Input,
-  // PhoneInput,
   EmailInput,
   Button,
 } from '@/components/atoms/ui'
+import { Alert } from '@/components/molecules/ui'
 
 export const FormRegister = () => {
   const {
@@ -15,10 +15,9 @@ export const FormRegister = () => {
     handleChange,
     handleSubmit,
     // handleReset,
-    // isLoading
+    isLoading,
+    error,
   } = useFormRegister()
-
-  console.log(formData)
 
   return (
     <form action="" onSubmit={handleSubmit}>
@@ -82,13 +81,10 @@ export const FormRegister = () => {
           isRequired
         />
       </InputGroup>
-      <Button
-        type="submit"
-        className="w-full"
-        // disabled={isLoading}
-        onClick={handleSubmit}
-      >
-        {`Registrarse`}
+      {error && <Alert isDanger>{error}</Alert>}
+
+      <Button type="submit" isDisabled={isLoading} className="w-full">
+        {isLoading ? 'Cargando...' : 'Registrarse'}
       </Button>
     </form>
   )
