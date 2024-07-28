@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import { useState } from 'react'
 
 export const Tabs = ({ items }) => {
-  const [activeTab, setActiveTab] = useState(items[0].id)
+  const [activeTab, setActiveTab] = useState(items[2].id)
 
   const toggleTab = tab => {
     if (activeTab !== tab) {
@@ -39,19 +39,24 @@ export const Tabs = ({ items }) => {
         </ul>
       </div>
       <div id="default-tab-content">
-        {items.map(({ id, name, content }) => (
+        {items.map(({ id, content }) => (
           <div
             key={id}
-            className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 flex flex-col gap-2 ${activeTab === id ? 'block' : 'hidden'}`}
+            className={`p-4 flex flex-col gap-2 ${activeTab === id ? 'block' : 'hidden'}`}
             id={id}
             role="tabpanel"
             aria-labelledby={id}
           >
             {typeof content === 'string' ? (
-              <p>{content}</p>
+              <p className="text-pretty font-light text-gray-500  dark:text-gray-400">
+                {content}
+              </p>
             ) : (
               content.map((paragraph, index) => (
-                <p key={index} className="text-pretty">
+                <p
+                  key={index}
+                  className="text-pretty font-light text-gray-500  dark:text-gray-400"
+                >
                   {paragraph}
                 </p>
               ))
