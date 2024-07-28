@@ -18,12 +18,11 @@ export default function useFormLogin() {
   const handleSubmit = async e => {
     e.preventDefault()
 
+    // Validaciones antes de enviar el formulario
     const isValidEmail = validateEmail(formData.email)
-
     if (!formData.email || !formData.password)
-      return alert('Todos los campos son obligatorios')
-
-    if (!isValidEmail) return alert('El correo electrónico no es valido')
+      return setError('Todos los campos son obligatorios')
+    if (!isValidEmail) return setError('El correo electrónico no es valido')
 
     try {
       setIsLoading(true)
@@ -34,9 +33,7 @@ export default function useFormLogin() {
         password: formData.password,
       })
 
-      if (response.error) {
-        return setError(response.error)
-      }
+      if (response.status === 401) return setError('Credenciales incorrectas')
     } catch (error) {
       setError(error)
       console.error(error)
@@ -52,5 +49,6 @@ export default function useFormLogin() {
     handleSubmit,
     handleReset,
     isLoading,
+    error,
   }
 }
