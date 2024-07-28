@@ -1,6 +1,6 @@
 'use client'
 
-import { useSession, signOut } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import { Section } from '@/components/atoms/ui'
 import { Card } from '@/components/molecules/ui/'
@@ -111,9 +111,6 @@ export default function PostulationPage() {
 
       <h2>{`</Postulación>`}</h2>
       <FormPostulation />
-      <button type="button" className="bg-red-500 text-white" onClick={signOut}>
-        {`CERRAR SESIÓN`}
-      </button>
     </Section>
   )
 }
