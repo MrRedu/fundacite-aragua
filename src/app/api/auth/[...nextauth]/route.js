@@ -51,7 +51,7 @@ export const authOptions = {
         token.id_user = user.id_user
         token.email = user.email_user
         token.names = user.names_user
-        token.lastanmes_user = user.lastanmes_user
+        token.lastnames = user.lastnames_user
         token.id_rol = user.id_rol
       }
       return token
@@ -60,7 +60,8 @@ export const authOptions = {
       if (token) {
         session.user.id_user = token.id_user
         session.user.email = token.email
-        session.user.name = token.name
+        session.user.names = token.names
+        session.user.lastnames = token.lastnames
         session.user.id_rol = token.id_rol
       }
       return session

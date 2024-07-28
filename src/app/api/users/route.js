@@ -6,7 +6,7 @@ export async function GET() {
   try {
     const [result] = await connection.query('SELECT * FROM tbl_users')
 
-    return NextResponse.json({ data: result, message: 'OK' }, { status: 200 })
+    return NextResponse.json({ data: result }, { status: 200 })
   } catch (error) {
     console.error(error)
     return NextResponse.json(
@@ -34,7 +34,7 @@ export async function POST(req) {
     return NextResponse.json(
       {
         message: 'User created successfully',
-        funcionario: {
+        usuario: {
           idUser: result.insertId,
           names,
         },
