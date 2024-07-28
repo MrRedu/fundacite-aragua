@@ -7,7 +7,7 @@ export const LoginButton = () => {
 
   if (session) {
     return (
-      <Link href={'/profile'}>
+      <Link href={'/postulation'}>
         <div className="relative w-8 h-8 overflow-hidden bg-blue-600 rounded dark:bg-gray-600">
           <svg
             className="absolute w-10 h-8 text-white -left-2"

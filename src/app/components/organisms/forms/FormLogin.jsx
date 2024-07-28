@@ -8,6 +8,7 @@ import {
   InputGroup,
   Label,
 } from '@/components/atoms/ui'
+import { Alert } from '@/components/molecules/ui'
 
 export const FormLogin = () => {
   const {
@@ -16,6 +17,7 @@ export const FormLogin = () => {
     handleSubmit,
     //  handleReset,
     isLoading,
+    error,
   } = useFormLogin()
 
   return (
@@ -43,7 +45,7 @@ export const FormLogin = () => {
           placeholder="••••••••"
         />
       </InputGroup>
-
+      {error && <Alert isDanger>{error}</Alert>}
       <div className="flex items-center justify-between">
         <div className="flex items-start ">
           <div className="flex items-center h-5 ">
