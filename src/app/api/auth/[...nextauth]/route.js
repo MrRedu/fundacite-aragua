@@ -7,10 +7,6 @@ async function login(credentials) {
       `http://localhost:3000/api/users/${credentials.email}`
     )
 
-    if (!response.ok) {
-      throw new Error('Wrong credentials')
-    }
-
     // VALIDATION WITH BCRYPT | PLEASE IMPLEMENT
     // const isPasswordValid = await bcrypt.compare(credentials.password,response.password_user)
     const isPasswordValid = true
