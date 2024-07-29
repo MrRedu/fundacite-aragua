@@ -75,7 +75,12 @@ export const FormLogin = () => {
           {`¿Olvidaste tu contraseña?`}
         </Link>
       </div>
-      <Button type="submit" isDisabled={isLoading} className="w-full">
+      <Button
+        type="submit"
+        isDisabled={isLoading}
+        isLoading={isLoading}
+        className="w-full"
+      >
         {isLoading ? 'Cargando...' : 'Iniciar sesión'}
       </Button>
       <p className="text-sm font-light text-gray-500 dark:text-gray-400">

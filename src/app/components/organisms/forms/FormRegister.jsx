@@ -83,7 +83,12 @@ export const FormRegister = () => {
       </InputGroup>
       {error && <Alert isDanger>{error}</Alert>}
 
-      <Button type="submit" isDisabled={isLoading} className="w-full">
+      <Button
+        type="submit"
+        isDisabled={isLoading}
+        isLoading={isLoading}
+        className="w-full"
+      >
         {isLoading ? 'Cargando...' : 'Registrarse'}
       </Button>
     </form>
