@@ -22,18 +22,9 @@ export const LoginButton = () => {
           onClick={toggleMenu}
         >
           <span className="sr-only">{`Abrir menú del usuario`}</span>
-          <svg
-            className="w-8 h-8 text-blue-600 mr-2"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <span>{`${session.user.names.split(' ')[0]} ${session.user.lastnames.split(' ')[0]}`}</span>
+          <span className="p-2 rounded-full bg-blue-600 text-white ">
+            {session.user.names[0] + session.user.lastnames[0]}
+          </span>
           <svg
             className="w-2.5 h-2.5 ms-3"
             aria-hidden="true"
