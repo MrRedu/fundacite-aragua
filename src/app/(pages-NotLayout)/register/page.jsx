@@ -1,7 +1,15 @@
+'use client'
 import Link from 'next/link'
 import { FormRegister } from '@/components/organisms/forms/FormRegister'
+import { useSession } from 'next-auth/react'
+import { redirect } from 'next/navigation'
 
 export default function RegisterPage() {
+  const { data: session } = useSession()
+
+  if (session) {
+    redirect('/postulation')
+  }
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center mx-auto h-screen lg:py-0">

@@ -1,7 +1,13 @@
 import propTypes from 'prop-types'
 import { Button } from '@/components/atoms/ui'
 
-export const Card = ({ title, buttonText = 'Leer más', children }) => {
+export const Card = ({
+  title,
+  buttonText = 'Leer más',
+  children,
+  href,
+  isLink,
+}) => {
   return (
     <div className="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -9,7 +15,7 @@ export const Card = ({ title, buttonText = 'Leer más', children }) => {
       </h5>
 
       {children}
-      <Button className="inline-flex items-center">
+      <Button className="inline-flex items-center" href={href} isLink={isLink}>
         {buttonText}{' '}
         <svg
           className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
@@ -35,4 +41,6 @@ Card.propTypes = {
   title: propTypes.string,
   buttonText: propTypes.string,
   children: propTypes.node,
+  href: propTypes.string,
+  isLink: propTypes.bool,
 }
