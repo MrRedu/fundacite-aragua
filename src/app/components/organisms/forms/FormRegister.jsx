@@ -21,7 +21,7 @@ export const FormRegister = () => {
 
   return (
     <form action="" onSubmit={handleSubmit}>
-      <InputGroup>
+      <InputGroup className="mb-4">
         <Label htmlFor="names" isRequired>{`Nombre completo`}</Label>
         <div className="grid grid-cols-2 gap-4">
           <Input
@@ -44,7 +44,7 @@ export const FormRegister = () => {
           />
         </div>
       </InputGroup>
-      <InputGroup>
+      <InputGroup className="mb-4">
         <Label htmlFor="email" isRequired>{`Correo electrónico`}</Label>
         <EmailInput
           type="email"
@@ -56,7 +56,7 @@ export const FormRegister = () => {
           isRequired
         />
       </InputGroup>
-      <InputGroup>
+      <InputGroup className="mb-4">
         <Label htmlFor="password" isRequired>{`Contraseña`}</Label>
         <Input
           type="password"
@@ -68,16 +68,18 @@ export const FormRegister = () => {
           isRequired
         />
       </InputGroup>
-      <InputGroup>
+      <InputGroup className="mb-4">
         <Label
-          htmlFor="password_confirmation"
+          htmlFor="confirmPassword"
           isRequired
         >{`Confirmar contraseña`}</Label>
         <Input
           type="password"
-          id="password_confirmation"
-          name="password_confirmation"
+          id="confirmPassword"
+          name="confirmPassword"
           placeholder="********"
+          onChange={handleChange}
+          value={formData.confirmPassword}
           isRequired
         />
       </InputGroup>
