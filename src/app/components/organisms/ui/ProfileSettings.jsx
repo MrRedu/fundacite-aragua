@@ -1,10 +1,16 @@
 'use client'
-import { useSession } from 'next-auth/react'
-import { Button, Input, InputGroup, Label } from '../../atoms/ui'
+import propTypes from 'prop-types'
+import { Button, Input, InputGroup, Label } from '@/components/atoms/ui'
+import { Alert } from '@/components/molecules/ui'
 
-export const ProfileSettings = () => {
-  const { data: session } = useSession()
-
+export const ProfileSettings = ({
+  session,
+  profileData,
+  handleChange,
+  handleSubmit,
+  isLoading,
+  error,
+}) => {
   return (
     <div className="grid grid-cols-1 px-4 pt-6 xl:grid-cols-3 xl:gap-4 dark:bg-gray-900">
       {/* Título */}
@@ -157,8 +163,10 @@ export const ProfileSettings = () => {
                   type="text"
                   name="names"
                   id="names"
-                  placeholder="ACOMODAR"
+                  placeholder="Ambos nombres"
                   isRequired
+                  onChange={handleChange}
+                  value={profileData.names}
                 />
               </InputGroup>
               <InputGroup className="col-span-6 sm:col-span-3">
@@ -169,127 +177,131 @@ export const ProfileSettings = () => {
                   type="text"
                   name="lastnames"
                   id="lastnames"
-                  placeholder="ACOMODAR"
+                  placeholder="Ambos apellidos"
+                  isRequired
+                  onChange={handleChange}
+                  value={profileData.lastnames}
+                />
+              </InputGroup>
+              <InputGroup className="col-span-6 sm:col-span-3">
+                <Label
+                  htmlFor="cedula"
+                  isRequired
+                >{`Cédula de identidad`}</Label>
+                <Input
+                  type="number"
+                  name="cedula"
+                  id="cedula"
+                  placeholder="V-12.345.678"
+                  onChange={handleChange}
+                  value={profileData.cedula}
                   isRequired
                 />
               </InputGroup>
               <InputGroup className="col-span-6 sm:col-span-3">
-                <Label htmlFor="state">{`Estado`}</Label>
+                <Label
+                  htmlFor="birthdate"
+                  isRequired
+                >{`Fecha de nacimiento`}</Label>
                 <Input
-                  type="text"
-                  name="state"
-                  id="state"
-                  placeholder="Aragua"
+                  type="date"
+                  name="birthdate"
+                  id="birthdate"
+                  onChange={handleChange}
+                  value={profileData.birthdate}
+                  isRequired
                 />
               </InputGroup>
+
               <InputGroup className="col-span-6 sm:col-span-3">
-                <Label htmlFor="city">{`Ciudad`}</Label>
-                <Input
-                  type="text"
-                  name="city"
-                  id="city"
-                  placeholder="Maracay"
-                />
-              </InputGroup>
-              <InputGroup className="col-span-6 sm:col-span-3">
-                <Label htmlFor="address">{`Dirección`}</Label>
-                <Input
-                  type="text"
-                  name="address"
-                  id="address"
-                  placeholder="Calle #5, Urb. Los Caballeros, 2101"
-                />
-              </InputGroup>
-              <InputGroup className="col-span-6 sm:col-span-3">
-                <Label htmlFor="email">{`Correo electrónico`}</Label>
-                <Input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="tu@correo.com"
-                  required
-                />
-              </InputGroup>
-              <InputGroup className="col-span-6 sm:col-span-3">
-                <Label htmlFor="phone">{`Número de teléfono`}</Label>
+                <Label htmlFor="phone" isRequired>{`Número de teléfono`}</Label>
                 <Input
                   type="tel"
                   name="phone"
                   id="phone"
                   placeholder="0414 123 45 67"
-                  required
+                  onChange={handleChange}
+                  value={profileData.phone}
+                  isRequired
                 />
               </InputGroup>
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="birthday"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  <span className="text-red-600">Birthday</span>
-                </label>
-                <input
-                  type="number"
-                  name="birthday"
-                  id="birthday"
-                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="15/08/1990"
-                  required
-                />
-              </div>
               <InputGroup className="col-span-6 sm:col-span-3">
-                <Label htmlFor="institution">{`Institución`}</Label>
+                <Label htmlFor="email" isRequired>{`Correo electrónico`}</Label>
+                <Input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="tu@correo.com"
+                  value={profileData.email}
+                  readOnly
+                />
+              </InputGroup>
+              <InputGroup className="col-span-6 sm:col-span-3">
+                <Label htmlFor="city" isRequired>{`Ciudad`}</Label>
                 <Input
                   type="text"
-                  name="institution"
-                  id="institution"
-                  placeholder="Universidad Principal de Venezuela"
+                  name="city"
+                  id="city"
+                  placeholder="Maracay"
+                  onChange={handleChange}
+                  value={profileData.city}
+                  isRequired
                 />
               </InputGroup>
               <InputGroup className="col-span-6 sm:col-span-3">
-                <Label htmlFor="career">{`Carrera universitaria`}</Label>
+                <Label htmlFor="address" isRequired>{`Dirección`}</Label>
+                <Input
+                  type="text"
+                  name="address"
+                  id="address"
+                  placeholder="Calle #5, Urb. Los Caballeros, 2101"
+                  onChange={handleChange}
+                  value={profileData.address}
+                  isRequired
+                />
+              </InputGroup>
+              <InputGroup className="col-span-6 sm:col-span-3">
+                <Label htmlFor="university" isRequired>{`Universidad`}</Label>
+                <Input
+                  type="text"
+                  name="university"
+                  id="university"
+                  placeholder="Universidad Principal de Venezuela"
+                  onChange={handleChange}
+                  value={profileData.university}
+                  isRequired
+                />
+              </InputGroup>
+              <InputGroup className="col-span-6 sm:col-span-3">
+                <Label
+                  htmlFor="career"
+                  isRequired
+                >{`Carrera universitaria`}</Label>
                 <Input
                   type="text"
                   name="career"
                   id="career"
                   placeholder="Ingeniería de Software"
-                  required
+                  onChange={handleChange}
+                  value={profileData.career}
+                  isRequired
                 />
               </InputGroup>
-              {/* <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="department"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Department
-                </label>
-                <input
-                  type="text"
-                  name="department"
-                  id="department"
-                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="Development"
-                  required
-                />
-              </div>
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="zip-code"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Zip/postal code
-                </label>
-                <input
-                  type="number"
-                  name="zip-code"
-                  id="zip-code"
-                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="123456"
-                  required
-                />
-              </div> */}
               <div className="col-span-6 sm:col-full">
-                <Button type="submit" isDisabled>{`Actualizar`}</Button>
+                <Button
+                  type="submit"
+                  onClick={handleSubmit}
+                  isDisabled={isLoading}
+                  isLoading={isLoading}
+                >
+                  {isLoading ? 'Guardando...' : 'Guardar'}
+                </Button>
               </div>
+              {error && (
+                <div className="col-span-6 sm:col-full">
+                  <Alert isDanger>{error}</Alert>
+                </div>
+              )}
             </div>
           </form>
         </div>
@@ -430,4 +442,14 @@ export const ProfileSettings = () => {
       </div>
     </div>
   )
+}
+
+ProfileSettings.propTypes = {
+  session: propTypes.object,
+  profileData: propTypes.object,
+  handleChange: propTypes.func,
+  handleSubmit: propTypes.func,
+  handleReset: propTypes.func,
+  isLoading: propTypes.bool,
+  error: propTypes.string,
 }
