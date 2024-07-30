@@ -18,13 +18,19 @@ INSERT INTO `tbl_roles` (id_rol, name_rol) VALUES
 CREATE TABLE `tbl_users` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `id_rol` int(11) NOT NULL DEFAULT 3,
-  `email_user` varchar(48) NOT NULL,
-  `password_user` varchar(255) NOT NULL,
+
   `names_user` varchar(32) NOT NULL,
   `lastnames_user` varchar(32) NOT NULL,
   `cedula_user` int(12),
+  `birthdate_user` varchar(32),
+  `phone_user` varchar(32),
+  `email_user` varchar(48) NOT NULL,
+  `city_user` varchar(255),
   `address_user` varchar(255),
   `university_user` varchar(255),
+  `career_user` varchar(255),
+  
+  `password_user` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de usuarios.';
