@@ -8,6 +8,8 @@ export const Button = ({
   isLink = false,
   href,
   isDisabled = false,
+  isLoading = false,
+  isSecondary = false,
 }) => {
   if (isLink) {
     return (
@@ -23,13 +25,19 @@ export const Button = ({
   return (
     <button
       type={type}
-      className={`text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 ${className} ${
-        isDisabled ? 'cursor-not-allowed' : ''
-      }`}
+      className={`
+        text-sm focus:outline-none focus:ring-4 font-medium py-2
+        ${
+          isSecondary
+            ? 'px-3  text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700'
+            : 'text-white bg-primary-700 hover:bg-primary-800  focus:ring-primary-300  rounded-lg  px-4 lg:px-5 py-2 lg:py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700  dark:focus:ring-primary-800'
+        }
+        ${className} 
+        ${isDisabled ? 'cursor-not-allowed ' : ''}`}
       onClick={onClick}
       disabled={isDisabled}
     >
-      {isDisabled && (
+      {isLoading && (
         <svg
           aria-hidden="true"
           role="status"
@@ -61,4 +69,6 @@ Button.propTypes = {
   isLink: propTypes.bool,
   href: propTypes.string,
   isDisabled: propTypes.bool,
+  isLoading: propTypes.bool,
+  isSecondary: propTypes.bool,
 }

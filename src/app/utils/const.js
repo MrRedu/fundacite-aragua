@@ -9,7 +9,7 @@ export const initialValueFormRegister = {
   lastnames: '',
   email: '',
   password: '',
-  password_confirmation: '',
+  confirmPassword: '',
 }
 
 export const initialValueFormPostulation = {
@@ -18,6 +18,19 @@ export const initialValueFormPostulation = {
   email: '',
   phone: '',
   message: '',
+}
+
+export const initialValueUseUser = {
+  names: '',
+  lastnames: '',
+  cedula: '',
+  birthdate: '',
+  phone: '',
+  email: '',
+  city: '',
+  address: '',
+  university: '',
+  career: '',
 }
 
 export const NAV_ITEMS = [
