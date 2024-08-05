@@ -102,6 +102,7 @@ export const ProfileSettings = ({
               <li className="py-4">
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
+                    {/* TODO: CAMBIAR A <IMAGE/> DE NEXT.JS */}
                     <img
                       src="/hand-holding-heart.svg"
                       alt="Servicio comunitario"
