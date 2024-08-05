@@ -6,7 +6,7 @@ export const CallToAction = () => {
     <section className="bg-white dark:bg-gray-900">
       <div className="gap-8 items-center mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 ">
         <Image
-          className="w-full"
+          className="w-full h-auto object-cover rounded-lg"
           src="/students-image-cta-image.webp"
           alt="Pasantes de Fundacite reunidos"
           width={500}
