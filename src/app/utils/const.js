@@ -205,3 +205,45 @@ export const IMAGES_TO_CAROUSEL = [
   '/carousel-02.webp',
   '/carousel-03.webp',
 ]
+
+export const MANAGEMENT_AXES = [
+  {
+    id: 'academia',
+    title: 'Academia de Software libre',
+    content: 'Capacitación en el uso de tecnologías libres.',
+    src: '/academy.svg',
+  },
+  {
+    id: 'support',
+    title: 'Apoyo a la inventiva popular',
+    content: 'Apoyo a la creatividad y la innovación en las comunidades.',
+    src: '/support.svg',
+  },
+  {
+    id: 'knowledge',
+    title: 'Casa de los saberes',
+    content:
+      'Espacios de integración en los que se promueven actividades científicas y tecnológicas dirigidas a la población en general.',
+    src: '/brain-chip.svg',
+  },
+  {
+    id: 'fortalent',
+    title: 'ForTalento',
+    content: 'Reconocimiento y motivación a la excelencia académica.',
+    src: '/achievement.svg',
+  },
+  {
+    id: 'redes',
+    title: 'Redes sociales de innovación productiva',
+    content:
+      'Promoviendo el desarrollo de las comunidades en materia productiva.',
+    src: '/people.svg',
+  },
+  {
+    id: 'generation',
+    title: 'Preservación de la reserva generacional',
+    content:
+      'Preservar la reserva generacional del pensamiento y la inventiva infantil, adolescente, juvenil y adulta.',
+    src: '/generation.svg',
+  },
+]
