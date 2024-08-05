@@ -4,22 +4,8 @@ import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import { Section } from '@/components/atoms/ui'
 import { Card } from '@/components/molecules/ui/'
-import { FormPostulation } from '@/components/organisms/forms/FormPostulation'
 import Image from 'next/image'
-
-const BENEFITS_LIST_PASANTIA = [
-  'Experiencia Práctica: Los estudiantes tienen la oportunidad de aplicar los conocimientos teóricos adquiridos en sus estudios en un entorno real, lo que les permite desarrollar habilidades prácticas en el área de la tecnología.',
-  'Desarrollo de Competencias: A través de proyectos específicos, los participantes pueden mejorar sus competencias técnicas y blandas, como el trabajo en equipo, la comunicación y la resolución de problemas.',
-  'Red de Contactos: Participar en estas actividades permite a los estudiantes establecer conexiones con profesionales del sector, lo que puede ser valioso para futuras oportunidades laborales.',
-  'Apoyo Académico: Fundacite también ofrece compensación a los pasantes, lo que puede aliviar la carga financiera mientras los estudiantes adquieren experiencial',
-]
-
-const BENEFITS_LIST_SERVICIO = [
-  'Experiencia Práctica: Los estudiantes tienen la oportunidad de aplicar los conocimientos teóricos adquiridos en sus estudios en un entorno real, lo que les permite desarrollar habilidades prácticas en el área de la tecnología.',
-  'Desarrollo de Competencias: A través de proyectos específicos, los participantes pueden mejorar sus competencias técnicas y blandas, como el trabajo en equipo, la comunicación y la resolución de problemas.',
-  'Contribución a la Comunidad: Al involucrarse en proyectos que benefician a la comunidad, los estudiantes pueden experimentar un sentido de satisfacción personal y profesional al contribuir al desarrollo social y tecnológico de su entorno.',
-  'Red de Contactos: Participar en estas actividades permite a los estudiantes establecer conexiones con profesionales del sector, lo que puede ser valioso para futuras oportunidades laborales.',
-]
+import { BENEFITS_LIST_PASANTIA, BENEFITS_LIST_SERVICIO } from '@/utils/const'
 
 export default function PostulationPage() {
   const { data: session } = useSession()
@@ -97,20 +83,6 @@ export default function PostulationPage() {
           </div>
         </Card>
       </div>
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <h2>{`</Postulación>`}</h2>
-      <FormPostulation />
     </Section>
   )
 }
