@@ -212,12 +212,14 @@ export const MANAGEMENT_AXES = [
     title: 'Academia de Software libre',
     content: 'Capacitación en el uso de tecnologías libres.',
     src: '/academy.svg',
+    altText: 'Computadora con software libre',
   },
   {
     id: 'support',
     title: 'Apoyo a la inventiva popular',
     content: 'Apoyo a la creatividad y la innovación en las comunidades.',
     src: '/support.svg',
+    altText: 'Libro para la inventiva popular',
   },
   {
     id: 'knowledge',
@@ -225,12 +227,14 @@ export const MANAGEMENT_AXES = [
     content:
       'Espacios de integración en los que se promueven actividades científicas y tecnológicas dirigidas a la población en general.',
     src: '/brain-chip.svg',
+    altText: 'Saberes con chip',
   },
   {
     id: 'fortalent',
     title: 'ForTalento',
     content: 'Reconocimiento y motivación a la excelencia académica.',
     src: '/achievement.svg',
+    altText: 'Medalla de reconocimiento',
   },
   {
     id: 'redes',
@@ -238,6 +242,7 @@ export const MANAGEMENT_AXES = [
     content:
       'Promoviendo el desarrollo de las comunidades en materia productiva.',
     src: '/people.svg',
+    altText: 'Movilización en redes sociales',
   },
   {
     id: 'generation',
@@ -245,6 +250,7 @@ export const MANAGEMENT_AXES = [
     content:
       'Preservar la reserva generacional del pensamiento y la inventiva infantil, adolescente, juvenil y adulta.',
     src: '/generation.svg',
+    altText: 'Reserva de generaciones del internet',
   },
 ]
 
