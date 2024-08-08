@@ -8,3 +8,8 @@ export const validateCedula = cedula => {
   const cedulaRegex = /^\d{7,8}$/
   return cedulaRegex.test(cedula)
 }
+
+export const validateString = string => {
+  const regExp = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/
+  return regExp.test(string)
+}
