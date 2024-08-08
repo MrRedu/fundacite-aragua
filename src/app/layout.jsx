@@ -4,6 +4,7 @@ import propTypes from 'prop-types'
 import '#/node_modules/minireset.css/minireset.min.css'
 import './globals.css'
 
+import { Toaster } from 'sonner'
 import { Providers } from '@/components/Provider'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -24,6 +25,7 @@ export default function RootLayout({
         // className={inter.className}
         >
           {children}
+          <Toaster />
         </body>
       </html>
     </Providers>
