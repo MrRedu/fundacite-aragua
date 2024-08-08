@@ -29,6 +29,9 @@ CREATE TABLE `tbl_users` (
   `address_user` varchar(255),
   `university_user` varchar(255),
   `career_user` varchar(255),
+
+  `internship_applicant_user` boolean DEFAULT false,
+  `community_service_applicant_user` boolean DEFAULT false,
   
   `password_user` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
