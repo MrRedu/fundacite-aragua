@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const ManagementAxes = () => {
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {MANAGEMENT_AXES.map(({ id, title, content, src }) => (
         <div
           key={id}
