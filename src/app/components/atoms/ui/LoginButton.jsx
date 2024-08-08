@@ -1,19 +1,21 @@
 'use client'
+import { useOutsideClick } from '#/src/app/hooks/useOutsideClick'
 import { useSession, signOut } from 'next-auth/react'
 import Link from 'next/link'
 import { useState } from 'react'
 
 export const LoginButton = () => {
   const { data: session } = useSession()
-  const [isOpenMenu, setIsOpenMenu] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const ref = useOutsideClick(() => setIsMenuOpen(false));
 
   const toggleMenu = () => {
-    setIsOpenMenu(!isOpenMenu)
+    setIsMenuOpen(prev => !prev);
   }
 
   if (session) {
     return (
-      <div className="relative">
+        <div className="relative" ref={ref} >
         <button
           id="dropdownAvatarNameButton"
           data-dropdown-toggle="dropdownAvatarName"
@@ -43,7 +45,9 @@ export const LoginButton = () => {
 
         {/* <!-- Dropdown menu --> */}
         <div
-          className={`z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 ${isOpenMenu ? 'absolute right-0' : 'hidden'}`}
+          className={`z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 
+            ${isMenuOpen ? 'absolute right-0' : 'hidden'}`}
+          
         >
           <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
             <div className="truncate">{session.user.email}</div>

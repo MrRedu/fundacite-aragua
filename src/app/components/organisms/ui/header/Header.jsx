@@ -9,10 +9,10 @@ import { NavInLanding } from './NavInLanding'
 
 export const Header = () => {
   const currentPathname = usePathname()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpenMobile, setIsMenuOpenMobile] = useState(false)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
+    setIsMenuOpenMobile(prev => !prev);
   }
 
   return (
@@ -38,6 +38,7 @@ export const Header = () => {
                 aria-controls="mobile-menu-2"
                 aria-expanded="false"
                 onClick={toggleMenu}
+               
               >
                 <span className="sr-only">{`Abrir menú principal`}</span>
                 <svg
@@ -67,8 +68,7 @@ export const Header = () => {
               </button>
             )}
           </div>
-
-          {currentPathname === '/' && <NavInLanding isMenuOpen={isMenuOpen} />}
+          {currentPathname === '/' && <NavInLanding isMenuOpen={isMenuOpenMobile} />}
         </div>
       </nav>
     </header>
