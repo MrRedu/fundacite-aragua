@@ -11,6 +11,7 @@ import {
   Tabs,
   Carousel,
   CallToAction,
+  ManagementAxes,
 } from '@/components/organisms/ui/'
 
 export default async function HomePage() {
@@ -24,8 +25,9 @@ export default async function HomePage() {
         <About />
         <Tabs items={TABS_ABOUT} />
       </Section>
-      <Section id={'programs'}>
+      <Section id={'management-axes'}>
         <Title>{`Ejes de gestión`}</Title>
+        <ManagementAxes />
       </Section>
       <Section notPadding className="pb-12">
         <Section isDiv>

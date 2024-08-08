@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { initialValueUseUser } from '@/utils/const'
 import { validateCedula } from '@/utils/utils'
 import { handleUser } from '@/services/users'
+import { toast } from 'sonner'
 
 const errorsInitialValue = {
   email: {
@@ -72,7 +73,7 @@ export function useUser({ email }) {
       }
 
       //   !!!
-      if (response.ok) alert('Usuario actualizado correctamente')
+      if (response.ok) toast.success('Usuario actualizado correctamente')
     } catch (error) {
       console.error('Failed to update user:', error)
     } finally {

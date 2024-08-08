@@ -51,6 +51,14 @@ export const LoginButton = () => {
           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
             <li>
               <Link
+                href="/"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Inicio
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/profile"
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
@@ -65,6 +73,17 @@ export const LoginButton = () => {
                 Postulación
               </Link>
             </li>
+            {/* 1-Administrador, 2-Desarrollador */}
+            {(session.user.id_rol === 1 || session.user.id_rol === 2) && (
+              <li>
+                <Link
+                  href={'/users'}
+                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Usuarios
+                </Link>
+              </li>
+            )}
           </ul>
           <div className="py-2">
             <button

@@ -43,8 +43,8 @@ export const NAV_ITEMS = [
     href: '#about',
   },
   {
-    name: 'Programas',
-    href: '#programs',
+    name: 'Ejes de gestión',
+    href: '#management-axes',
   },
   {
     name: 'Postulaciones',
@@ -204,4 +204,66 @@ export const IMAGES_TO_CAROUSEL = [
   '/carousel-01.webp',
   '/carousel-02.webp',
   '/carousel-03.webp',
+]
+
+export const MANAGEMENT_AXES = [
+  {
+    id: 'academia',
+    title: 'Academia de Software libre',
+    content: 'Capacitación en el uso de tecnologías libres.',
+    src: '/academy.svg',
+    altText: 'Computadora con software libre',
+  },
+  {
+    id: 'support',
+    title: 'Apoyo a la inventiva popular',
+    content: 'Apoyo a la creatividad y la innovación en las comunidades.',
+    src: '/support.svg',
+    altText: 'Libro para la inventiva popular',
+  },
+  {
+    id: 'knowledge',
+    title: 'Casa de los saberes',
+    content:
+      'Espacios de integración en los que se promueven actividades científicas y tecnológicas dirigidas a la población en general.',
+    src: '/brain-chip.svg',
+    altText: 'Saberes con chip',
+  },
+  {
+    id: 'fortalent',
+    title: 'ForTalento',
+    content: 'Reconocimiento y motivación a la excelencia académica.',
+    src: '/achievement.svg',
+    altText: 'Medalla de reconocimiento',
+  },
+  {
+    id: 'redes',
+    title: 'Redes sociales de innovación productiva',
+    content:
+      'Promoviendo el desarrollo de las comunidades en materia productiva.',
+    src: '/people.svg',
+    altText: 'Movilización en redes sociales',
+  },
+  {
+    id: 'generation',
+    title: 'Preservación de la reserva generacional',
+    content:
+      'Preservar la reserva generacional del pensamiento y la inventiva infantil, adolescente, juvenil y adulta.',
+    src: '/generation.svg',
+    altText: 'Reserva de generaciones del internet',
+  },
+]
+
+export const BENEFITS_LIST_PASANTIA = [
+  'Experiencia Práctica: Los estudiantes tienen la oportunidad de aplicar los conocimientos teóricos adquiridos en sus estudios en un entorno real, lo que les permite desarrollar habilidades prácticas en el área de la tecnología.',
+  'Desarrollo de Competencias: A través de proyectos específicos, los participantes pueden mejorar sus competencias técnicas y blandas, como el trabajo en equipo, la comunicación y la resolución de problemas.',
+  'Red de Contactos: Participar en estas actividades permite a los estudiantes establecer conexiones con profesionales del sector, lo que puede ser valioso para futuras oportunidades laborales.',
+  'Apoyo Académico: Fundacite también ofrece compensación a los pasantes, lo que puede aliviar la carga financiera mientras los estudiantes adquieren experiencial',
+]
+
+export const BENEFITS_LIST_SERVICIO = [
+  'Experiencia Práctica: Los estudiantes tienen la oportunidad de aplicar los conocimientos teóricos adquiridos en sus estudios en un entorno real, lo que les permite desarrollar habilidades prácticas en el área de la tecnología.',
+  'Desarrollo de Competencias: A través de proyectos específicos, los participantes pueden mejorar sus competencias técnicas y blandas, como el trabajo en equipo, la comunicación y la resolución de problemas.',
+  'Contribución a la Comunidad: Al involucrarse en proyectos que benefician a la comunidad, los estudiantes pueden experimentar un sentido de satisfacción personal y profesional al contribuir al desarrollo social y tecnológico de su entorno.',
+  'Red de Contactos: Participar en estas actividades permite a los estudiantes establecer conexiones con profesionales del sector, lo que puede ser valioso para futuras oportunidades laborales.',
 ]
