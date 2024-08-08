@@ -2,6 +2,7 @@
 import propTypes from 'prop-types'
 import { Button, Input, InputGroup, Label } from '@/components/atoms/ui'
 import { Alert } from '@/components/molecules/ui'
+import Image from 'next/image'
 
 export const ProfileSettings = ({
   session,
@@ -73,11 +74,12 @@ export const ProfileSettings = ({
               <li className="py-4">
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
-                    {/* TODO: CAMBIAR A <IMAGE/> DE NEXT.JS */}
-                    <img
+                    <Image
                       src="/graduation.svg"
                       alt="Pasantías"
                       className="w-10 h-10"
+                      width={40}
+                      height={40}
                     />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -102,11 +104,12 @@ export const ProfileSettings = ({
               <li className="py-4">
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
-                    {/* TODO: CAMBIAR A <IMAGE/> DE NEXT.JS */}
-                    <img
+                    <Image
                       src="/hand-holding-heart.svg"
                       alt="Servicio comunitario"
                       className="w-10 h-10"
+                      width={40}
+                      height={40}
                     />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -278,7 +281,7 @@ export const ProfileSettings = ({
                   isDisabled={isLoading}
                   isLoading={isLoading}
                 >
-                  {isLoading ? 'Guardando...' : 'Guardar'}
+                  {isLoading ? 'Cargando...' : 'Actualizar'}
                 </Button>
               </div>
               {error && (
