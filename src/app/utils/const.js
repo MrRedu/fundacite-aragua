@@ -43,8 +43,8 @@ export const NAV_ITEMS = [
     href: '#about',
   },
   {
-    name: 'Programas',
-    href: '#programs',
+    name: 'Ejes de gestión',
+    href: '#management-axes',
   },
   {
     name: 'Postulaciones',
