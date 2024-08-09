@@ -1,21 +1,29 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
 import NextAuth from 'next-auth/next'
+import { validatePassword } from '#/src/app/services/authServices'
 
 async function login(credentials) {
   try {
     const response = await fetch(
       `http://localhost:3000/api/users/${credentials.email}`
     )
+    if (!response.ok) throw new Error('Something went wrong')
+    const { data: user } = await response.json()
+    if (!user) throw new Error('Incorrect credentials')
 
-    // VALIDATION WITH BCRYPT | PLEASE IMPLEMENT
-    // const isPasswordValid = await bcrypt.compare(credentials.password,response.password_user)
-    const isPasswordValid = true
+    const isPasswordValid = await validatePassword(
+      credentials.password,
+      user.password_user
+    )
 
-    if (!isPasswordValid) {
-      throw new Error('Wrong credentials')
-    }
+    console.log({
+      credentials: credentials.password,
+      user: user.password_user,
+      isValid: `❌😑❓✅${isPasswordValid}`,
+    })
 
-    return response.json()
+    if (!isPasswordValid) throw new Error('Incorrect credentials')
+    return user
   } catch (error) {
     console.error('Error while logging in: ', error)
     throw new Error('Something went wrong')
@@ -29,14 +37,14 @@ export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
-      name: 'Credentials',
+      name: 'credentials',
       credentials: {},
-      async authorize(credentials, req) {
+      authorize: async credentials => {
         try {
-          const { data } = await login(credentials)
-          return data
+          const user = await login(credentials)
+          return user
         } catch (error) {
-          throw new Error('Credentials not valid')
+          throw new Error('Failed to login')
         }
       },
     }),
