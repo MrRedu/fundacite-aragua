@@ -1,8 +1,8 @@
 'use client'
 import { Section } from '@/components/atoms/ui'
-import { ProfileSettings } from '@/components/organisms/ui'
 import { useSession } from 'next-auth/react'
 import { useUser } from '@/hooks/useUser'
+import { ProfileSettings } from '@/components/organisms/profile-settings/ProfileSettings'
 
 export default function ProfilePage() {
   const { data: session } = useSession()
