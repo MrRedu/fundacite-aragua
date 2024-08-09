@@ -10,8 +10,7 @@ export async function POST(req, res) {
     const names = formData.get('names')
     const lastnames = formData.get('lastnames')
     const email = formData.get('email')
-    const phone = formData.get('phone')
-    const message = formData.get('message')
+    const to = formData.get('to')
 
     await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
@@ -21,8 +20,7 @@ export async function POST(req, res) {
         names,
         lastnames,
         email,
-        phone,
-        message,
+        to,
       }),
     })
 

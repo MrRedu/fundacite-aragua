@@ -36,7 +36,7 @@ export default function PostulationPage() {
           title="Pasantías"
           buttonText="¡Postularme!"
           isLink
-          href="/postulation"
+          href="/profile"
         >
           <div className="mb-6">
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -61,7 +61,7 @@ export default function PostulationPage() {
           title="Servicio comunitario"
           buttonText="¡Postularme!"
           isLink
-          href="/postulation"
+          href="/profile"
         >
           <div className="mb-6">
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">

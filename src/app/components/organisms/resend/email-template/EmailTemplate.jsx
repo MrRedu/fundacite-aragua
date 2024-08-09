@@ -1,6 +1,6 @@
 // https://resend.com/docs/send-with-nextjs
 import propTypes from 'prop-types'
-export const EmailTemplate = ({ names, lastnames, email, phone, message }) => (
+export const EmailTemplate = ({ email, names, lastnames, to }) => (
   <div>
     <h1>Postulación para Fundacite</h1>
     <p>
@@ -22,15 +22,9 @@ export const EmailTemplate = ({ names, lastnames, email, phone, message }) => (
       </span>
     </p>
     <p>
-      Número de teléfono:{' '}
+      Postulación para:{' '}
       <span style={{ fontWeight: 'bold', color: 'red', lineHeight: '1' }}>
-        {phone}
-      </span>
-    </p>
-    <p>
-      Mensaje:{' '}
-      <span style={{ fontWeight: 'bold', color: 'red', lineHeight: '1' }}>
-        {message}
+        {to}
       </span>
     </p>
   </div>
@@ -39,6 +33,5 @@ EmailTemplate.propTypes = {
   names: propTypes.string,
   lastnames: propTypes.string,
   email: propTypes.string,
-  phone: propTypes.string,
-  message: propTypes.string,
+  to: propTypes.string,
 }

@@ -31,6 +31,8 @@ export const initialValueUseUser = {
   address: '',
   university: '',
   career: '',
+  internshipApplicant: false,
+  communityServiceApplicant: false,
 }
 
 export const NAV_ITEMS = [

@@ -16,12 +16,6 @@ async function login(credentials) {
       user.password_user
     )
 
-    console.log({
-      credentials: credentials.password,
-      user: user.password_user,
-      isValid: `❌😑❓✅${isPasswordValid}`,
-    })
-
     if (!isPasswordValid) throw new Error('Incorrect credentials')
     return user
   } catch (error) {

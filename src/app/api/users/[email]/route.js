@@ -40,10 +40,12 @@ export async function PUT(req, { params }) {
       address,
       university,
       career,
+      internshipApplicant,
+      communityServiceApplicant,
     } = await req.json()
 
     const [result] = await connection.query(
-      'UPDATE tbl_users SET names_user = ?, lastnames_user = ?, cedula_user = ?, birthdate_user = ?, phone_user = ?, email_user = ?, city_user = ?, address_user = ?, university_user = ?, career_user = ? WHERE email_user = ?',
+      'UPDATE tbl_users SET names_user = ?, lastnames_user = ?, cedula_user = ?, birthdate_user = ?, phone_user = ?, email_user = ?, city_user = ?, address_user = ?, university_user = ?, career_user = ?, internship_applicant_user = ?, community_service_applicant_user = ? WHERE email_user = ?',
       [
         names,
         lastnames,
@@ -55,6 +57,8 @@ export async function PUT(req, { params }) {
         address,
         university,
         career,
+        internshipApplicant,
+        communityServiceApplicant,
         params.email,
       ]
     )

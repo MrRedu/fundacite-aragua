@@ -33,8 +33,6 @@ export default function useFormLogin() {
         redirect: false,
       })
 
-      console.log(response)
-
       if (response.status === 401) return setError('Credenciales incorrectas')
     } catch (error) {
       setError(error)

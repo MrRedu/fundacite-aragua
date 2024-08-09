@@ -6,11 +6,20 @@ import { ProfileSettings } from '@/components/organisms/profile-settings/Profile
 
 export default function ProfilePage() {
   const { data: session } = useSession()
-  const { profileData, handleChange, handleSubmit, isLoading, error } = useUser(
-    {
-      email: session?.user?.email,
-    }
-  )
+  const {
+    profileData,
+    handleChange,
+    handleSubmit,
+    isLoading,
+    error,
+    //
+    sendToCommunityService,
+    sendToInternshipService,
+    isLoadingPostulationService,
+    isLoadingPostulationInternship,
+  } = useUser({
+    email: session?.user?.email,
+  })
 
   return (
     <Section>
@@ -21,6 +30,11 @@ export default function ProfilePage() {
         handleSubmit={handleSubmit}
         isLoading={isLoading}
         error={error}
+        sendToCommunityService={sendToCommunityService}
+        // isLoadingPostulation={isLoadingPostulation}
+        sendToInternshipService={sendToInternshipService}
+        isLoadingPostulationService={isLoadingPostulationService}
+        isLoadingPostulationInternship={isLoadingPostulationInternship}
       />
     </Section>
   )

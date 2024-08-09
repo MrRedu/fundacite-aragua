@@ -12,6 +12,11 @@ export const ProfileSettings = ({
   handleSubmit,
   isLoading,
   error,
+  // //////////
+  sendToCommunityService,
+  sendToInternshipService,
+  isLoadingPostulationService,
+  isLoadingPostulationInternship,
 }) => {
   return (
     <div className="grid grid-cols-1 px-4 pt-6 xl:grid-cols-3 xl:gap-4 dark:bg-gray-900">
@@ -27,7 +32,14 @@ export const ProfileSettings = ({
           name={session?.user?.names}
           lastname={session?.user?.lastnames}
         />
-        <PostulationUserCard />
+        <PostulationUserCard
+          sendToCommunityService={sendToCommunityService}
+          sendToInternshipService={sendToInternshipService}
+          isLoadingPostulationService={isLoadingPostulationService}
+          isLoadingPostulationInternship={isLoadingPostulationInternship}
+          internshipApplicant={profileData.internshipApplicant}
+          communityServiceApplicant={profileData.communityServiceApplicant}
+        />
       </div>
       {/* Información general */}
       <div className="col-span-2">
@@ -329,4 +341,9 @@ ProfileSettings.propTypes = {
   handleReset: propTypes.func,
   isLoading: propTypes.bool,
   error: propTypes.string,
+
+  sendToCommunityService: propTypes.func,
+  sendToInternshipService: propTypes.func,
+  isLoadingPostulationService: propTypes.bool,
+  isLoadingPostulationInternship: propTypes.bool,
 }
