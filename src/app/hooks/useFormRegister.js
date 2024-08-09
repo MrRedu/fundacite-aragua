@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { initialValueFormRegister } from '@/utils/const'
-import { validateEmail } from '@/utils/utils'
+import { validateEmail, validateString } from '@/utils/utils'
 import { signIn } from 'next-auth/react'
 import { hashPassword } from '@/services/authServices'
 
@@ -13,11 +13,6 @@ async function loadEmail(email) {
   } else {
     throw new Error(`Error: #${response.status}`)
   }
-}
-
-const validateString = string => {
-  const regExp = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/
-  return regExp.test(string)
 }
 
 export default function useFormRegister() {
