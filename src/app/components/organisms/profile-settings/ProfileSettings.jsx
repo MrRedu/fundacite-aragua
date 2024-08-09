@@ -15,7 +15,8 @@ export const ProfileSettings = ({
   // //////////
   sendToCommunityService,
   sendToInternshipService,
-  isLoadingPostulation,
+  isLoadingPostulationService,
+  isLoadingPostulationInternship,
 }) => {
   return (
     <div className="grid grid-cols-1 px-4 pt-6 xl:grid-cols-3 xl:gap-4 dark:bg-gray-900">
@@ -34,7 +35,10 @@ export const ProfileSettings = ({
         <PostulationUserCard
           sendToCommunityService={sendToCommunityService}
           sendToInternshipService={sendToInternshipService}
-          isLoadingPostulation={isLoadingPostulation}
+          isLoadingPostulationService={isLoadingPostulationService}
+          isLoadingPostulationInternship={isLoadingPostulationInternship}
+          internshipApplicant={profileData.internshipApplicant}
+          communityServiceApplicant={profileData.communityServiceApplicant}
         />
       </div>
       {/* Información general */}
@@ -340,5 +344,6 @@ ProfileSettings.propTypes = {
 
   sendToCommunityService: propTypes.func,
   sendToInternshipService: propTypes.func,
-  isLoadingPostulation: propTypes.bool,
+  isLoadingPostulationService: propTypes.bool,
+  isLoadingPostulationInternship: propTypes.bool,
 }

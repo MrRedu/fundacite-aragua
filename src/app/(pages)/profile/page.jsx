@@ -3,20 +3,21 @@ import { Section } from '@/components/atoms/ui'
 import { useSession } from 'next-auth/react'
 import { useUser } from '@/hooks/useUser'
 import { ProfileSettings } from '@/components/organisms/profile-settings/ProfileSettings'
-import { usePostulation } from '@/hooks/usePostulation'
 
 export default function ProfilePage() {
   const { data: session } = useSession()
-  const { profileData, handleChange, handleSubmit, isLoading, error } = useUser(
-    {
-      email: session?.user?.email,
-    }
-  )
   const {
+    profileData,
+    handleChange,
+    handleSubmit,
+    isLoading,
+    error,
+    //
     sendToCommunityService,
     sendToInternshipService,
-    isLoading: isLoadingPostulation,
-  } = usePostulation({
+    isLoadingPostulationService,
+    isLoadingPostulationInternship,
+  } = useUser({
     email: session?.user?.email,
   })
 
@@ -30,8 +31,10 @@ export default function ProfilePage() {
         isLoading={isLoading}
         error={error}
         sendToCommunityService={sendToCommunityService}
-        isLoadingPostulation={isLoadingPostulation}
+        // isLoadingPostulation={isLoadingPostulation}
         sendToInternshipService={sendToInternshipService}
+        isLoadingPostulationService={isLoadingPostulationService}
+        isLoadingPostulationInternship={isLoadingPostulationInternship}
       />
     </Section>
   )

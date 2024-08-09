@@ -5,7 +5,10 @@ import { Button } from '@/components/atoms/ui'
 export const PostulationUserCard = ({
   sendToCommunityService,
   sendToInternshipService,
-  isLoadingPostulation,
+  isLoadingPostulationService,
+  isLoadingPostulationInternship,
+  internshipApplicant,
+  communityServiceApplicant,
 }) => {
   return (
     <div className="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
@@ -34,14 +37,21 @@ export const PostulationUserCard = ({
                 </span>
               </div>
               <div className="inline-flex items-center">
-                {/* TODO: SI YA ESTÁ POSTULADO, PONER BOTÓN SECUNDARIO EN DISABLED */}
-                <Button
-                  isLoading={isLoadingPostulation}
-                  isDisabled={isLoadingPostulation}
-                  onClick={sendToInternshipService}
-                >
-                  {isLoadingPostulation ? `Enviando...` : `Postularme`}
-                </Button>
+                {internshipApplicant ? (
+                  <Button isDisabled isSecondary>
+                    {`Postulado`}
+                  </Button>
+                ) : (
+                  <Button
+                    isLoading={isLoadingPostulationInternship}
+                    isDisabled={isLoadingPostulationInternship}
+                    onClick={sendToInternshipService}
+                  >
+                    {isLoadingPostulationInternship
+                      ? `Cargando...`
+                      : `Postularme`}
+                  </Button>
+                )}
               </div>
             </div>
           </li>
@@ -66,14 +76,19 @@ export const PostulationUserCard = ({
                 </span>
               </div>
               <div className="inline-flex items-center">
-                {/* TODO: SI YA ESTÁ POSTULADO, PONER BOTÓN SECUNDARIO EN DISABLED */}
-                <Button
-                  isLoading={isLoadingPostulation}
-                  isDisabled={isLoadingPostulation}
-                  onClick={sendToCommunityService}
-                >
-                  {isLoadingPostulation ? `Enviando...` : `Postularme`}
-                </Button>
+                {communityServiceApplicant ? (
+                  <Button isDisabled isSecondary>
+                    {`Postulado`}
+                  </Button>
+                ) : (
+                  <Button
+                    isLoading={isLoadingPostulationService}
+                    isDisabled={isLoadingPostulationService}
+                    onClick={sendToCommunityService}
+                  >
+                    {isLoadingPostulationService ? `Cargando...` : `Postularme`}
+                  </Button>
+                )}
               </div>
             </div>
           </li>
@@ -86,5 +101,8 @@ export const PostulationUserCard = ({
 PostulationUserCard.propTypes = {
   sendToCommunityService: propTypes.func,
   sendToInternshipService: propTypes.func,
-  isLoadingPostulation: propTypes.bool,
+  internshipApplicant: propTypes.bool,
+  communityServiceApplicant: propTypes.bool,
+  isLoadingPostulationService: propTypes.bool,
+  isLoadingPostulationInternship: propTypes.bool,
 }
