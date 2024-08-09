@@ -1,5 +1,5 @@
 'use client'
-import { useOutsideClick } from '#/src/app/hooks/useOutsideClick'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 import { useSession, signOut } from 'next-auth/react'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -7,15 +7,15 @@ import { useState } from 'react'
 export const LoginButton = () => {
   const { data: session } = useSession()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const ref = useOutsideClick(() => setIsMenuOpen(false));
+  const ref = useOutsideClick(() => setIsMenuOpen(false))
 
   const toggleMenu = () => {
-    setIsMenuOpen(prev => !prev);
+    setIsMenuOpen(prev => !prev)
   }
 
   if (session) {
     return (
-        <div className="relative" ref={ref} >
+      <div className="relative" ref={ref}>
         <button
           id="dropdownAvatarNameButton"
           data-dropdown-toggle="dropdownAvatarName"
@@ -47,7 +47,6 @@ export const LoginButton = () => {
         <div
           className={`z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 
             ${isMenuOpen ? 'absolute right-0' : 'hidden'}`}
-          
         >
           <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
             <div className="truncate">{session.user.email}</div>
@@ -56,6 +55,7 @@ export const LoginButton = () => {
             <li>
               <Link
                 href="/"
+                onClick={() => setIsMenuOpen(false)}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Inicio
@@ -64,6 +64,7 @@ export const LoginButton = () => {
             <li>
               <Link
                 href="/profile"
+                onClick={() => setIsMenuOpen(false)}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Perfil
@@ -72,6 +73,7 @@ export const LoginButton = () => {
             <li>
               <Link
                 href="/postulation"
+                onClick={() => setIsMenuOpen(false)}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Postulación
@@ -82,6 +84,7 @@ export const LoginButton = () => {
               <li>
                 <Link
                   href={'/users'}
+                  onClick={() => setIsMenuOpen(false)}
                   className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   Usuarios
