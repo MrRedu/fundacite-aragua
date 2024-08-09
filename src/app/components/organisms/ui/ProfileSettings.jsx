@@ -404,7 +404,7 @@ export const ProfileSettings = ({
                   htmlFor="confirm-password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Confirm password
+                  {`Confirmar contraseña`}
                 </label>
                 <input
                   type="text"

@@ -10,6 +10,7 @@ export default function RegisterPage() {
   if (session) {
     redirect('/postulation')
   }
+  
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center mx-auto h-screen lg:py-0">
