@@ -1,6 +1,12 @@
+import propTypes from 'prop-types'
 import Image from 'next/image'
+import { Button } from '@/components/atoms/ui'
 
-export const PostulationUserCard = () => {
+export const PostulationUserCard = ({
+  sendToCommunityService,
+  sendToInternshipService,
+  isLoadingPostulation,
+}) => {
   return (
     <div className="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
       <div className="flow-root">
@@ -28,12 +34,14 @@ export const PostulationUserCard = () => {
                 </span>
               </div>
               <div className="inline-flex items-center">
-                <a
-                  href="#"
-                  className="px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                {/* TODO: SI YA ESTÁ POSTULADO, PONER BOTÓN SECUNDARIO EN DISABLED */}
+                <Button
+                  isLoading={isLoadingPostulation}
+                  isDisabled={isLoadingPostulation}
+                  onClick={sendToInternshipService}
                 >
-                  Postulado
-                </a>
+                  {isLoadingPostulation ? `Enviando...` : `Postularme`}
+                </Button>
               </div>
             </div>
           </li>
@@ -58,12 +66,14 @@ export const PostulationUserCard = () => {
                 </span>
               </div>
               <div className="inline-flex items-center">
-                <a
-                  href="#"
-                  className="px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                {/* TODO: SI YA ESTÁ POSTULADO, PONER BOTÓN SECUNDARIO EN DISABLED */}
+                <Button
+                  isLoading={isLoadingPostulation}
+                  isDisabled={isLoadingPostulation}
+                  onClick={sendToCommunityService}
                 >
-                  {`Postularme`}
-                </a>
+                  {isLoadingPostulation ? `Enviando...` : `Postularme`}
+                </Button>
               </div>
             </div>
           </li>
@@ -71,4 +81,10 @@ export const PostulationUserCard = () => {
       </div>
     </div>
   )
+}
+
+PostulationUserCard.propTypes = {
+  sendToCommunityService: propTypes.func,
+  sendToInternshipService: propTypes.func,
+  isLoadingPostulation: propTypes.bool,
 }
