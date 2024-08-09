@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { initialValueFormRegister } from '@/utils/const'
-import { validateEmail } from '@/utils/utils'
+import { validateEmail, validateString } from '@/utils/utils'
 import { signIn } from 'next-auth/react'
+import { hashPassword } from '@/services/authServices'
 
 async function loadEmail(email) {
   const response = await fetch(`http://localhost:3000/api/users/${email}`)
@@ -12,11 +13,6 @@ async function loadEmail(email) {
   } else {
     throw new Error(`Error: #${response.status}`)
   }
-}
-
-const validateString = string => {
-  const regExp = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/
-  return regExp.test(string)
 }
 
 export default function useFormRegister() {
@@ -61,10 +57,15 @@ export default function useFormRegister() {
 
     try {
       setIsLoading(true)
-
+      const hashedPassword = await hashPassword(formData.password)
       const response = await fetch('http://localhost:3000/api/users/', {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          names: formData.names,
+          lastnames: formData.lastnames,
+          email: formData.email,
+          password: hashedPassword,
+        }),
       })
 
       if (!response.ok) {

@@ -1,19 +1,13 @@
 import { Section } from '@/components/atoms/ui'
 import { User } from '@/components/molecules/ui'
-
-const loadUsers = async () => {
-  const response = await fetch('http://localhost:3000/api/users')
-
-  return response.json()
-}
+import { handleUsers } from '@/services/users'
 
 export default async function UsersPage() {
-  const { data } = await loadUsers()
+  const { data } = await handleUsers()
 
   return (
     <Section>
       <h2>{`</UsersPage>`}</h2>
-      {/* <h2>{`Session: ${JSON.stringify(session)}`}</h2> */}
       <User />
       {data.map((user, index) => (
         <>

@@ -26,12 +26,14 @@ export default function useFormLogin() {
 
     try {
       setIsLoading(true)
-
       const response = await signIn('credentials', {
-        redirect: false,
         email: formData.email,
         password: formData.password,
+        callbackUrl: `/`,
+        redirect: false,
       })
+
+      console.log(response)
 
       if (response.status === 401) return setError('Credenciales incorrectas')
     } catch (error) {
