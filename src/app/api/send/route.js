@@ -11,6 +11,13 @@ export async function POST(req, res) {
     const lastnames = formData.get('lastnames')
     const email = formData.get('email')
     const to = formData.get('to')
+    const cedula = formData.get('cedula')
+    const birthdate = formData.get('birthdate')
+    const phone = formData.get('phone')
+    const city = formData.get('city')
+    const address = formData.get('address')
+    const university = formData.get('university')
+    const career = formData.get('career')
 
     await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
@@ -21,6 +28,13 @@ export async function POST(req, res) {
         lastnames,
         email,
         to,
+        cedula,
+        birthdate,
+        phone,
+        city,
+        address,
+        university,
+        career,
       }),
     })
 
