@@ -92,10 +92,17 @@ export function useUser({ email }) {
     )
     if (isDataComplete) {
       const formDataObj = new FormData()
-      formDataObj.append('email', profileData.email)
       formDataObj.append('names', profileData.names)
       formDataObj.append('lastnames', profileData.lastnames)
+      formDataObj.append('email', profileData.email)
       formDataObj.append('to', 'Servicio comunitario')
+      formDataObj.append('cedula', profileData.cedula)
+      formDataObj.append('birthdate', profileData.birthdate)
+      formDataObj.append('phone', profileData.phone)
+      formDataObj.append('city', profileData.city)
+      formDataObj.append('address', profileData.address)
+      formDataObj.append('university', profileData.university)
+      formDataObj.append('career', profileData.career)
 
       try {
         setIsLoadingPostulationService(true)
@@ -135,10 +142,17 @@ export function useUser({ email }) {
     )
     if (isDataComplete) {
       const formDataObj = new FormData()
-      formDataObj.append('email', profileData.email)
       formDataObj.append('names', profileData.names)
       formDataObj.append('lastnames', profileData.lastnames)
+      formDataObj.append('email', profileData.email)
       formDataObj.append('to', 'Pasantía')
+      formDataObj.append('cedula', profileData.cedula)
+      formDataObj.append('birthdate', profileData.birthdate)
+      formDataObj.append('phone', profileData.phone)
+      formDataObj.append('city', profileData.city)
+      formDataObj.append('address', profileData.address)
+      formDataObj.append('university', profileData.university)
+      formDataObj.append('career', profileData.career)
 
       try {
         setIsLoadingPostulationInternship(true)
@@ -154,6 +168,7 @@ export function useUser({ email }) {
         if (result.status === 200) {
           toast.success('Postulación enviada')
           setProfileData(prev => ({ ...prev, internshipApplicant: true }))
+          return
         }
         if (result.status === 500) {
           return toast.error('Error al enviar la postulación')
@@ -212,7 +227,6 @@ export function useUser({ email }) {
     if (email) {
       fetchProfileData()
     }
-    console.log(profileData)
 
     return () => abortController.abort()
   }, [email])

@@ -194,7 +194,7 @@ export const ProfileSettings = ({
             )}
           </form>
         </div>
-        <div className="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+        {/* <div className="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
           <h3 className="mb-4 text-xl font-semibold dark:text-white">
             {`Actualizar contraseña`}
           </h3>
@@ -322,12 +322,12 @@ export const ProfileSettings = ({
                   className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   type="submit"
                 >
-                  Save all
+                  Confirmar
                 </button>
               </div>
             </div>
           </form>
-        </div>
+        </div> */}
       </div>
     </div>
   )
